@@ -11,27 +11,27 @@ function Contact() {
 
   const handleSubmit = () => {
 
-  // VALIDATION
+    // VALIDATION
 
-  if (
-    !form.firstName ||
-    !form.lastName ||
-    !form.email ||
-    !form.phone ||
-    !form.eventType ||
-    !form.date ||
-    !form.guests ||
-    !form.vision
-  ) {
+    if (
+      !form.firstName ||
+      !form.lastName ||
+      !form.email ||
+      !form.phone ||
+      !form.eventType ||
+      !form.date ||
+      !form.guests ||
+      !form.vision
+    ) {
 
-    alert("Please fill all fields before submitting.");
+      alert("Please fill all fields before submitting.");
 
-    return;
-  }
+      return;
+    }
 
-  // WHATSAPP MESSAGE
+    // WHATSAPP MESSAGE
 
-  const whatsappMessage = `
+    const whatsappMessage = `
 *NEW EVENT ENQUIRY*
 
 *First Name:* ${form.firstName}
@@ -49,37 +49,37 @@ function Contact() {
 ${form.vision}
   `;
 
-  const encodedMessage = encodeURIComponent(whatsappMessage);
+    const encodedMessage = encodeURIComponent(whatsappMessage);
 
-  const whatsappURL =
-    `https://api.whatsapp.com/send?phone=918610766168&text=${encodedMessage}`;
+    const whatsappURL =
+      `https://api.whatsapp.com/send?phone=918610766168&text=${encodedMessage}`;
 
-  // OPEN WHATSAPP
+    // OPEN WHATSAPP
 
-  window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank");
 
-  // RESET FORM
+    // RESET FORM
 
-  setForm({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    date: '',
-    guests: '',
-    vision: ''
-  });
+    setForm({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      eventType: '',
+      date: '',
+      guests: '',
+      vision: ''
+    });
 
-  // SUCCESS MESSAGE
+    // SUCCESS MESSAGE
 
-  setSubmitted(true);
+    setSubmitted(true);
 
-  setTimeout(() => {
-    setSubmitted(false);
-  }, 4000);
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 4000);
 
-};
+  };
 
   return (
     <div className="contact-page">
@@ -94,11 +94,12 @@ ${form.vision}
           <h3>We'd Love to <em>Hear</em> From You</h3>
           <div className="c-detail">
             <strong>ADDRESS</strong>
-            <p>12 Brookside Lane, Whitefield<br />Bangalore, Karnataka 560066, India</p>
+            <p>PJJ6+866, Kuzhalmannam East,
+              Kerala 678702</p>
           </div>
           <div className="c-detail">
             <strong>PHONE &amp; EMAIL</strong>
-            <p>+91 80 4567 8900<br />+91 98765 43210<br />events@brooksidegarden.in</p>
+            <p>+91 09447003343<br /><br />events@darsanavillasgarden.in</p>
           </div>
           <div className="c-detail">
             <strong>HOURS</strong>
@@ -106,7 +107,7 @@ ${form.vision}
           </div>
           <div className="c-detail">
             <strong>FOLLOW US</strong>
-            <p>@brooksidegarden_events<br />Instagram · Facebook · Pinterest</p>
+            <p>@darsanavillas_events<br />Instagram · Facebook · Pinterest</p>
           </div>
         </div>
 
@@ -170,6 +171,35 @@ ${form.vision}
           </button>
         </div>
       </div>
+
+      {/* ── MAP SECTION ── */}
+      <div className="map-section">
+        <div className="map-header">
+          <p className="section-label">FIND US</p>
+          <h2 className="map-title">Our <em>Location</em></h2>
+          <a
+            href="https://maps.app.goo.gl/92Xwgj15N2yNrXMU8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-directions"
+          >
+            GET DIRECTIONS →
+          </a>
+        </div>
+        <div className="map-embed">
+          <iframe
+            title="Our Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.1!2d76.5794!3d10.7867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c1e5d1c3a7b5%3A0x92Xwgj15N2yNrXMU8!2sKing+%26+queen+unisex+beauty+parlour!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </div>
+
     </div>
   );
 }

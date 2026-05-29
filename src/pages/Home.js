@@ -142,17 +142,21 @@ function Home() {
 
         <div className="collage-strip">
           {COLLAGE_ITEMS.map((item, i) => (
+
             <div
               key={item.label}
               className={`collage-cell sa-fade-up sa-d${i + 1}`}
             >
-              <img src={item.img} alt={item.alt} />
-              <div className="collage-overlay" />
-              <div className="collage-label">
-                <div className="collage-icon-ring">{item.icon}</div>
-                <p className="collage-title">{item.label}</p>
-                <p className="collage-sub">{item.sub}</p>
-              </div>
+              <a href="/event" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}>
+                <img src={item.img} alt={item.alt} />
+                <div className="collage-overlay" />
+                <div className="collage-label">
+                  <div className="collage-icon-ring">{item.icon}</div>
+                  <p className="collage-title">{item.label}</p>
+                  <p className="collage-sub">{item.sub}</p>
+
+                </div>
+              </a>
             </div>
           ))}
         </div>

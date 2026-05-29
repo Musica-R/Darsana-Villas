@@ -115,6 +115,82 @@
 
 
 /* ================================================================
+   MAP SECTION
+   ================================================================ */
+.map-section {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  padding: 0 60px;
+}
+
+.map-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.map-title {
+  font-size: 38px;
+  font-weight: 300;
+  margin: 6px 0 0;
+  line-height: 1.1;
+}
+
+.map-title em {
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+.map-header .section-label {
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+}
+
+.map-header > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-directions {
+  display: inline-block;
+  padding: 13px 28px;
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-dark);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: background .25s, color .25s;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.btn-directions:hover {
+  background: var(--gold-dark);
+  color: white;
+}
+
+.map-embed {
+  width: 100%;
+  height: 460px;
+  border: 1px solid var(--gold-pale);
+  overflow: hidden;
+  box-shadow: 0 4px 40px rgba(123, 79, 46, .08);
+}
+
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* ================================================================
    RESPONSIVE — 1024px
    ================================================================ */
 @media (max-width: 1024px) {
@@ -131,6 +207,15 @@
 
   .contact-form {
     padding: 50px 40px;
+  }
+
+  .map-section {
+    padding: 0 40px;
+    margin-bottom: 80px;
+  }
+
+  .map-title {
+    font-size: 32px;
   }
 }
 
@@ -169,6 +254,28 @@
 
   .form-group {
     margin-bottom: 22px;
+  }
+
+  .map-section {
+    padding: 0 24px;
+    margin-bottom: 70px;
+  }
+
+  .map-title {
+    font-size: 28px;
+  }
+
+  .map-embed {
+    height: 380px;
+  }
+
+  .map-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-directions {
+    align-self: flex-start;
   }
 }
 
@@ -239,5 +346,23 @@
 
   .form-group textarea {
     height: 110px;
+  }
+
+  .map-section {
+    padding: 0 18px;
+    margin-bottom: 55px;
+  }
+
+  .map-title {
+    font-size: 24px;
+  }
+
+  .map-embed {
+    height: 280px;
+  }
+
+  .btn-directions {
+    font-size: 9px;
+    padding: 11px 20px;
   }
 }
