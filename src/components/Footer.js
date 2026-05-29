@@ -79,6 +79,9 @@ function Footer() {
 
         <div className="footer-bottom">
           <p>© 2025 Darsana Villas. All Rights Reserved.</p>
+
+            <a href="https://mpeoples.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", cursor: "pointer"}}><p>Developed by Mpeoples Business Solutions Private Limited</p></a>
+
           <nav>
             <a href="/">Privacy Policy</a>
             <a href="/">Terms of Use</a>

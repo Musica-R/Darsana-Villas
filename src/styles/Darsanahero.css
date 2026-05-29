@@ -687,12 +687,12 @@
   }
 
   .dah-hero {
-    min-height: 640px;
+    min-height: 440px;
   }
 
   .dah-content {
-    min-height: 640px;
-    padding: 72px 20px 64px;
+    min-height: 440px;
+    padding: 0px 20px 64px;
   }
 
   .dah-ornament svg {
@@ -767,8 +767,9 @@
   .dah-breadcrumb {
     bottom: 18px;
     gap: 6px;
-    font-size: 8px;
+    font-size: 14px;
     letter-spacing: 1.4px;
+    left: 35%;
   }
 
   .dah-breadcrumb .dah-arrow {
