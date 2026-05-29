@@ -1,0 +1,243 @@
+.contact-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+
+.contact-info h3 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.contact-info h3 em {
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+.c-detail {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--gold-pale);
+}
+
+.c-detail:last-child {
+  border-bottom: none;
+}
+
+.c-detail strong {
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 7px;
+}
+
+.c-detail p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.contact-form {
+  background: white;
+  padding: 60px;
+  box-shadow: 0 4px 40px rgba(123, 79, 46, .08);
+}
+
+.contact-form h3 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 38px;
+}
+
+.contact-form h3 em {
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+.form-success {
+  background: var(--gold-pale);
+  color: var(--gold-dark);
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-mid);
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--gold-pale);
+  background: var(--cream);
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color .3s;
+  font-weight: 300;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+
+/* ================================================================
+   RESPONSIVE — 1024px
+   ================================================================ */
+@media (max-width: 1024px) {
+
+  .contact-section {
+    padding: 0 40px;
+    gap: 55px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 32px;
+  }
+
+  .contact-form {
+    padding: 50px 40px;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 768px TABLET
+   ================================================================ */
+@media (max-width: 768px) {
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin: 70px auto;
+    padding: 0 24px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 30px;
+    margin-bottom: 28px;
+  }
+
+  .contact-form {
+    padding: 42px 32px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .c-detail {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 420px MOBILE
+   ================================================================ */
+@media (max-width: 420px) {
+
+  .contact-section {
+    margin: 55px auto;
+    padding: 0 18px;
+    gap: 38px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+    box-shadow: 0 3px 24px rgba(123, 79, 46, .06);
+  }
+
+  .form-success {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    padding: 14px 12px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .c-detail {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .c-detail strong {
+    font-size: 8px;
+    letter-spacing: 1.6px;
+    margin-bottom: 6px;
+  }
+
+  .c-detail p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 13px 14px;
+    font-size: 13px;
+  }
+
+  .form-group textarea {
+    height: 110px;
+  }
+}

@@ -1,0 +1,793 @@
+.dah-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 66px;
+}
+
+.dah-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
+
+/* Full-bleed background photo — entire hero */
+.dah-bg-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% center;
+    filter: brightness(0.88);
+    z-index: 0;
+}
+
+/*
+  SVG overlay — fills entire hero.
+  Contains:
+    1. The cream filled shape (left panel + arc)
+    2. The gold arc border stroke on top
+  Uses preserveAspectRatio="none" so it scales with the hero.
+  All geometry is in a 1440×420 artboard.
+  
+  Cream shape path:
+    M 0,0          top-left
+    L 580,0        across top to arc start
+    Q 780,210      control point — bows right (the visible arc bulge)
+    580,420        arc ends at bottom
+    L 0,420        across bottom
+    Z              close
+
+  The arc starts/ends at x=580 (≈40% of 1440).
+  Control point at x=780 (≈54%) creates the outward bow.
+  This means the cream fills 0→580px on left, and the curved
+  area between 580 and 780 at mid-height is part cream, part photo.
+*/
+.dah-panel-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Floral corners — positioned over the cream area */
+.dah-floral-tl {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 160px;
+    height: 160px;
+    opacity: 0.25;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.dah-floral-bl {
+    position: absolute;
+    bottom: -10px;
+    left: 2px;
+    width: 110px;
+    height: 110px;
+    opacity: 0.18;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Content — left 44%, padded to keep text inside cream area */
+.dah-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44%;
+    height: 100%;
+    z-index: 4;
+    padding: 32px 60px 32px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.dah-ornament {
+    align-self: center;
+    margin: 0 0 8px 0;
+    line-height: 1;
+}
+
+.dah-label {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    align-self: center;
+    font-size: 10px;
+    letter-spacing: 4.5px;
+    color: #8b6914;
+    text-transform: uppercase;
+    margin: 0 0 14px 0;
+    white-space: nowrap;
+}
+
+.dah-label::before,
+.dah-label::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #b8860b;
+    flex-shrink: 0;
+}
+
+.dah-title {
+    all: unset;
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+    color: #160e04;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.dah-title em {
+    font-style: italic;
+    color: #b8860b;
+    font-weight: 400;
+    display: block;
+}
+
+.dah-divider {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px 0;
+    align-self: flex-start;
+}
+
+.dah-line {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #c8a855;
+    flex-shrink: 0;
+}
+
+.dah-body {
+    all: unset;
+    display: block;
+    font-size: 13px;
+    color: #3a2608;
+    line-height: 1.72;
+    margin: 0 0 20px 0;
+    max-width: 320px;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.dah-stats {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0;
+}
+
+.dah-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 78px;
+    padding: 0 14px 0 0;
+}
+
+.dah-stat-sep {
+    width: 1px;
+    height: 38px;
+    background: #c8a855;
+    opacity: 0.65;
+    flex-shrink: 0;
+    align-self: center;
+    margin-right: 14px;
+}
+
+.dah-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #160e04;
+    line-height: 1;
+}
+
+.dah-num--xs {
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #160e04;
+}
+
+.dah-lbl {
+    font-size: 7.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b6914;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.dah-breadcrumb {
+    position: absolute;
+    top: 220px;
+    left: 480px;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #7b6855;
+}
+
+.dah-breadcrumb .dah-arrow {
+    color: #c8a855;
+    font-size: 14px;
+}
+
+.dah-breadcrumb .active {
+    position: relative;
+    color: #c8a855;
+    padding-bottom: 4px;
+}
+
+.dah-breadcrumb .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c8a855,
+        transparent
+    );
+
+    opacity: 0.9;
+}
+
+.dah-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 66px;
+}
+
+.dah-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
+
+.dah-bg-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% center;
+    filter: brightness(0.88);
+    z-index: 0;
+}
+
+.dah-panel-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.dah-floral-tl {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 160px;
+    height: 160px;
+    opacity: 0.25;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.dah-floral-bl {
+    position: absolute;
+    bottom: -10px;
+    left: 2px;
+    width: 110px;
+    height: 110px;
+    opacity: 0.18;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.dah-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44%;
+    height: 100%;
+    z-index: 4;
+    padding: 32px 60px 32px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.dah-ornament {
+    align-self: center;
+    margin: 0 0 8px 0;
+    line-height: 1;
+    opacity: 0;
+    animation: dah-fade-down 0.9s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dah-label {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    align-self: center;
+    font-size: 10px;
+    letter-spacing: 4.5px;
+    color: #8b6914;
+    text-transform: uppercase;
+    margin: 0 0 14px 0;
+    white-space: nowrap;
+    opacity: 0;
+    animation: dah-fade-up 1.0s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dah-label::before,
+.dah-label::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #b8860b;
+    flex-shrink: 0;
+}
+
+.dah-title {
+    all: unset;
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+    color: #160e04;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+    text-align: left;
+    align-self: flex-start;
+    opacity: 0;
+    animation: dah-fade-up 1.1s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dah-title em {
+    font-style: italic;
+    color: #b8860b;
+    font-weight: 400;
+    display: block;
+}
+
+.dah-divider {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px 0;
+    align-self: flex-start;
+    opacity: 0;
+    animation: dah-fade-up 1.0s 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dah-line {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #c8a855;
+    flex-shrink: 0;
+}
+
+.dah-body {
+    all: unset;
+    display: block;
+    font-size: 13px;
+    color: #3a2608;
+    line-height: 1.72;
+    margin: 0 0 20px 0;
+    max-width: 320px;
+    text-align: left;
+    align-self: flex-start;
+    opacity: 0;
+    animation: dah-fade-up 1.0s 1.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dah-stats {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0;
+    opacity: 0;
+    animation: dah-fade-up 1.0s 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dah-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 78px;
+    padding: 0 14px 0 0;
+}
+
+.dah-stat-sep {
+    width: 1px;
+    height: 38px;
+    background: #c8a855;
+    opacity: 0.65;
+    flex-shrink: 0;
+    align-self: center;
+    margin-right: 14px;
+}
+
+.dah-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #160e04;
+    line-height: 1;
+}
+
+.dah-num--xs {
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #160e04;
+}
+
+.dah-lbl {
+    font-size: 7.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b6914;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.dah-breadcrumb {
+    position: absolute;
+    top: 220px;
+    left: 480px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7b6855;
+    opacity: 0;
+    animation: dah-fade-up 1.0s 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dah-breadcrumb .dah-arrow {
+    color: #c8a855;
+    font-size: 14px;
+}
+
+.dah-breadcrumb .active {
+    position: relative;
+    color: #c8a855;
+    padding-bottom: 4px;
+}
+
+.dah-breadcrumb .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8a855, transparent);
+    opacity: 0.9;
+}
+
+/* ================================================================
+   KEYFRAMES
+   ================================================================ */
+
+@keyframes dah-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dah-fade-down {
+    from {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================================================
+   RESPONSIVE — 1024px
+   ================================================================ */
+@media (max-width: 1024px) {
+
+  .dah-wrapper {
+    padding-top: 64px;
+  }
+
+  .dah-hero {
+    height: 390px;
+  }
+
+  .dah-content {
+    width: 48%;
+    padding: 28px 42px 28px 36px;
+  }
+
+  .dah-title {
+    font-size: 34px;
+  }
+
+  .dah-body {
+    font-size: 12.5px;
+    max-width: 300px;
+  }
+
+  .dah-breadcrumb {
+    left: 420px;
+    top: 205px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+
+  .dah-floral-tl {
+    width: 130px;
+    height: 130px;
+  }
+
+  .dah-floral-bl {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 768px TABLET
+   ================================================================ */
+@media (max-width: 768px) {
+
+  .dah-wrapper {
+    padding-top: 60px;
+  }
+
+  .dah-hero {
+    height: auto;
+    min-height: 720px;
+  }
+
+  .dah-bg-photo {
+    object-position: center;
+    filter: brightness(0.72);
+  }
+
+  .dah-panel-svg {
+    display: none;
+  }
+
+  .dah-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 720px;
+    padding: 90px 34px 70px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(248, 243, 233, 0.96) 0%,
+        rgba(248, 243, 233, 0.92) 58%,
+        rgba(248, 243, 233, 0.84) 100%
+      );
+  }
+
+  .dah-title {
+    font-size: 42px;
+    text-align: center;
+    align-self: center;
+  }
+
+  .dah-title em {
+    display: inline;
+  }
+
+  .dah-divider,
+  .dah-body,
+  .dah-stats {
+    align-self: center;
+  }
+
+  .dah-body {
+    max-width: 480px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .dah-stats {
+    justify-content: center;
+  }
+
+  .dah-breadcrumb {
+    left: 50%;
+    top: auto;
+    bottom: 26px;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  .dah-floral-tl {
+    width: 120px;
+    height: 120px;
+    opacity: 0.16;
+  }
+
+  .dah-floral-bl {
+    width: 90px;
+    height: 90px;
+    opacity: 0.12;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 420px MOBILE
+   ================================================================ */
+@media (max-width: 420px) {
+
+  .dah-wrapper {
+    padding-top: 56px;
+  }
+
+  .dah-hero {
+    min-height: 640px;
+  }
+
+  .dah-content {
+    min-height: 640px;
+    padding: 72px 20px 64px;
+  }
+
+  .dah-ornament svg {
+    width: 70px;
+    height: auto;
+  }
+
+  .dah-label {
+    font-size: 7px;
+    letter-spacing: 2.8px;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .dah-label::before,
+  .dah-label::after {
+    width: 20px;
+  }
+
+  .dah-title {
+    font-size: 30px;
+    line-height: 1.14;
+    margin-bottom: 10px;
+  }
+
+  .dah-divider {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .dah-line {
+    width: 20px;
+  }
+
+  .dah-body {
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .dah-stats {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .dah-stat {
+    min-width: 70px;
+    padding: 0;
+  }
+
+  .dah-stat-sep {
+    display: none;
+  }
+
+  .dah-num {
+    font-size: 18px;
+  }
+
+  .dah-num--xs {
+    font-size: 9px;
+  }
+
+  .dah-lbl {
+    font-size: 6.5px;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+  }
+
+  .dah-breadcrumb {
+    bottom: 18px;
+    gap: 6px;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .dah-breadcrumb .dah-arrow {
+    font-size: 10px;
+  }
+
+  .dah-floral-tl {
+    width: 90px;
+    height: 90px;
+    top: -6px;
+    left: -8px;
+    opacity: 0.1;
+  }
+
+  .dah-floral-bl {
+    width: 65px;
+    height: 65px;
+    left: 0;
+    bottom: -6px;
+    opacity: 0.08;
+  }
+}

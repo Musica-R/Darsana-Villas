@@ -1,0 +1,572 @@
+/* Events.css */
+
+.events-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 32vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.events-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.events-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 20px 120px;
+}
+
+.events-hero-content .section-label {
+  color: var(--gold-light);
+}
+
+.events-hero-content .section-title {
+  color: #fff;
+  font-size: clamp(54px, 8vw, 96px);
+}
+
+.events-hero-content .section-body {
+  color: rgba(255, 255, 255, .82);
+  max-width: 560px;
+  margin: 16px auto 0;
+}
+
+/* EVENTS GRID */
+
+.events-grid-section {
+  padding: 100px 60px;
+  background: var(--cream);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.events-center-text {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.gold-divider {
+  width: 120px;
+  height: 1px;
+  background: var(--gold);
+  margin: 26px auto;
+  position: relative;
+}
+
+.gold-divider span {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cream);
+  padding: 0 12px;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.event-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid rgba(201, 168, 76, .14);
+  cursor: pointer;
+  transition: all .45s cubic-bezier(.16, 1, .3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 64px rgba(123, 79, 46, .16);
+  border-color: var(--gold-light);
+}
+
+.event-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.event-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform .65s cubic-bezier(.16, 1, .3, 1);
+
+  filter: saturate(.88);
+}
+
+.event-card:hover .event-card-img img {
+  transform: scale(1.09);
+}
+
+.event-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(180deg,
+      transparent 40%,
+      rgba(26, 12, 4, .55) 100%);
+
+  transition: opacity .4s;
+}
+
+.event-card:hover .event-card-img::after {
+  opacity: .8;
+}
+
+.event-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 20px 26px;
+
+  z-index: 2;
+  transform: translateY(6px);
+
+  transition: transform .4s;
+}
+
+.event-card:hover .event-card-overlay {
+  transform: translateY(0);
+}
+
+.event-card-num {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.event-card-body {
+  padding: 26px 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.event-card-title {
+  font-size: 12px;
+  letter-spacing: 3.5px;
+  color: var(--text-dark);
+}
+
+.event-card-bar {
+  width: 32px;
+  height: 1.5px;
+
+  background:
+    linear-gradient(90deg,
+      var(--gold),
+      var(--gold-light));
+
+  transition: width .4s;
+}
+
+.event-card:hover .event-card-bar {
+  width: 56px;
+}
+
+.event-card-desc {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-mid);
+  font-weight: 300;
+  flex: 1;
+}
+
+.event-card-cta {
+  margin-top: 14px;
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap .3s;
+  text-decoration: none;
+}
+
+.event-card:hover .event-card-cta {
+  gap: 14px;
+}
+
+/* EVENTS CTA */
+
+.events-cta-band {
+  background:
+    linear-gradient(135deg,
+      var(--coffee) 0%,
+      var(--text-dark) 100%);
+
+  padding: 80px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.events-cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.events-cta-band .section-title {
+  color: var(--gold-light);
+  position: relative;
+  z-index: 1;
+}
+
+.events-cta-band p {
+  color: rgba(255, 255, 255, .65);
+  font-weight: 300;
+  font-size: 15px;
+  margin: 16px 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.events-cta-band .btn-gold {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================================================
+   EVENT CARD — STAGGERED CHILD ANIMATIONS
+   ================================================================ */
+
+/* Default hidden state — slide up */
+.ec-anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Image — scale reveal instead of slide */
+.ec-anim-scale {
+  transform: scale(0.96);
+  transition:
+    opacity 1.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Title — drifts down from above */
+.event-card-title.ec-anim {
+  transform: translateY(-20px);
+}
+
+/* Gold bar — grows from left */
+.event-card-bar.ec-anim {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* CTA link — slides in from left */
+.event-card-cta.ec-anim {
+  transform: translateX(-16px);
+}
+
+/* Triggered state */
+.ec-anim-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* ================================================================
+   SECTION HEADING ANIMATIONS
+   ================================================================ */
+
+.sa-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-18px);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.sa-d1 {
+  transition-delay: 0.22s;
+}
+
+.sa-d2 {
+  transition-delay: 0.44s;
+}
+
+.sa-d3 {
+  transition-delay: 0.66s;
+}
+
+.sa-d4 {
+  transition-delay: 0.88s;
+}
+
+/* ================================================================
+   RESPONSIVE — 1024px
+   ================================================================ */
+@media (max-width: 1024px) {
+
+  .events-grid-section {
+    padding: 80px 40px;
+  }
+
+  .events-grid {
+    gap: 24px;
+    margin-top: 54px;
+  }
+
+  .event-card-body {
+    padding: 24px 22px 28px;
+  }
+
+  .event-card-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .events-cta-band {
+    padding: 70px 40px;
+  }
+
+  .events-hero-content {
+    padding: 70px 20px 100px;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 768px TABLET
+   ================================================================ */
+@media (max-width: 768px) {
+
+  .events-hero {
+    min-height: 42vh;
+  }
+
+  .events-hero-content {
+    padding: 70px 24px 90px;
+  }
+
+  .events-hero-content .section-title {
+    font-size: clamp(44px, 9vw, 72px);
+  }
+
+  .events-hero-content .section-body {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .events-grid-section {
+    padding: 70px 24px;
+  }
+
+  .events-center-text {
+    max-width: 100%;
+  }
+
+  .gold-divider {
+    margin: 22px auto;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 48px;
+  }
+
+  .event-card-body {
+    padding: 22px 20px 26px;
+    gap: 9px;
+  }
+
+  .event-card-overlay {
+    padding: 16px 20px;
+  }
+
+  .event-card-title {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    line-height: 1.7;
+  }
+
+  .event-card-desc {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .event-card-cta {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+  }
+
+  .events-cta-band {
+    padding: 70px 24px;
+  }
+
+  .events-cta-band p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 420px MOBILE
+   ================================================================ */
+@media (max-width: 420px) {
+
+  .events-hero {
+    min-height: 46vh;
+  }
+
+  .events-hero-content {
+    padding: 60px 18px 70px;
+  }
+
+  .events-hero-content .section-title {
+    font-size: clamp(34px, 12vw, 52px);
+    line-height: 1.05;
+  }
+
+  .events-hero-content .section-body {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 14px;
+  }
+
+  .events-grid-section {
+    padding: 55px 18px;
+  }
+
+  .gold-divider {
+    width: 90px;
+    margin: 18px auto;
+  }
+
+  .gold-divider span {
+    font-size: 10px;
+    top: -10px;
+    padding: 0 8px;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 38px;
+  }
+
+  .event-card {
+    border-width: 1px;
+  }
+
+  .event-card-img {
+    aspect-ratio: 4 / 3.2;
+  }
+
+  .event-card-overlay {
+    padding: 14px 16px;
+  }
+
+  .event-card-num {
+    font-size: 11px;
+  }
+
+  .event-card-body {
+    padding: 20px 18px 24px;
+    gap: 8px;
+  }
+
+  .event-card-title {
+    font-size: 9px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+  }
+
+  .event-card-bar {
+    width: 26px;
+  }
+
+  .event-card:hover .event-card-bar {
+    width: 42px;
+  }
+
+  .event-card-desc {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .event-card-cta {
+    margin-top: 10px;
+    font-size: 7px;
+    letter-spacing: 1.7px;
+    gap: 6px;
+  }
+
+  .event-card:hover .event-card-cta {
+    gap: 10px;
+  }
+
+  .events-cta-band {
+    padding: 55px 18px;
+  }
+
+  .events-cta-band p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 14px 0 24px;
+  }
+
+  .sa-fade-up,
+  .sa-word,
+  .ec-anim,
+  .ec-anim-scale {
+    transition-duration: 1.1s;
+  }
+}

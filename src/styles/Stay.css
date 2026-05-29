@@ -1,0 +1,286 @@
+.stay-rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 100%;
+}
+
+.stay-room {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 480px;
+}
+
+.stay-room img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s ease;
+  filter: saturate(.9);
+}
+
+.stay-room:hover img {
+  transform: scale(1.06);
+}
+
+.stay-room-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(26, 12, 4, .78) 100%);
+}
+
+.stay-room-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 32px;
+}
+
+.stay-room-tag {
+  font-size: 8.5px;
+  letter-spacing: 4px;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.stay-room-name {
+  font-size: 28px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.stay-room-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, .72);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 14px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease, opacity .4s;
+  opacity: 0;
+}
+
+.stay-room:hover .stay-room-desc {
+  max-height: 100px;
+  opacity: 1;
+}
+
+.stay-room-meta {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+}
+
+/* AMENITIES */
+.amenities-strip {
+  background: var(--coffee);
+  padding: 60px;
+}
+
+.amenities-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+
+.amenity-item {
+  text-align: center;
+  padding: 32px 20px;
+  border-right: 1px solid rgba(201, 168, 76, .2);
+  transition: background .3s;
+}
+
+.amenity-item:last-child {
+  border-right: none;
+}
+
+.amenity-item:hover {
+  background: rgba(201, 168, 76, .08);
+}
+
+.amenity-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+  color: #eec965;
+  /* clean gold */
+}
+
+.amenity-name {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+
+.amenity-desc {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, .55);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* BRIDAL FEATURE */
+.stay-feature {
+  max-width: 1380px;
+  margin: 80px auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.stay-feature-imgs {
+  position: relative;
+  height: 500px;
+}
+
+.stay-f-main {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  border: 5px solid var(--gold-pale);
+  box-shadow: 0 20px 50px rgba(123, 79, 46, .14);
+}
+
+.stay-f-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stay-f-small {
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  width: 40%;
+  height: 55%;
+  overflow: hidden;
+  border: 5px solid var(--cream);
+  box-shadow: 0 14px 40px rgba(123, 79, 46, .16);
+}
+
+.stay-f-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   RESPONSIVE (MOBILE)
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  /* GRID → 2 columns */
+  .stay-rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FEATURE layout stacks */
+  .stay-feature {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 30px;
+  }
+
+  .stay-feature-imgs {
+    height: 420px;
+  }
+
+  /* Amenities → 3 per row */
+  .amenities-strip-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* ROOMS → single column */
+  .stay-rooms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stay-room {
+    height: 380px;
+  }
+
+  .stay-room-info {
+    padding: 26px 20px;
+  }
+
+  .stay-room-name {
+    font-size: 22px;
+  }
+
+  /* FEATURE spacing */
+  .stay-feature {
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 30px;
+  }
+
+  .stay-f-main {
+    width: 75%;
+  }
+
+  .stay-f-small {
+    width: 45%;
+    bottom: 20px;
+  }
+
+  /* Amenities → 2 per row */
+  .amenities-strip {
+    padding: 40px 20px;
+  }
+
+  .amenities-strip-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .amenity-item {
+    padding: 24px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .stay-room {
+    height: 320px;
+  }
+
+  .stay-room-name {
+    font-size: 20px;
+  }
+
+  .stay-room-desc {
+    font-size: 12px;
+  }
+
+  .amenities-strip-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .stay-f-main,
+  .stay-f-small {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    margin-bottom: 16px;
+  }
+
+  .stay-feature-imgs {
+    height: auto;
+  }
+}

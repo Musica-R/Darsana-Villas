@@ -1,0 +1,10 @@
+.announce-bar {
+  background: linear-gradient(90deg, var(--coffee) 0%, var(--coffee-mid) 50%, var(--coffee) 100%);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 11px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 10.5px;
+  letter-spacing: 4px;
+  /* no margin-top needed */
+}

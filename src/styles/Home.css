@@ -1,0 +1,1121 @@
+/* ================================================================
+   SCROLL ANIMATION SYSTEM
+   All animation classes prefixed with sa-
+   ================================================================ */
+
+/* Base hidden states — smaller travel distances feel more refined */
+.sa-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-fade-left {
+  opacity: 0;
+  transform: translateX(-38px);
+  transition:
+    opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-fade-right {
+  opacity: 0;
+  transform: translateX(38px);
+  transition:
+    opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-scale {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Word-by-word heading animation — drifts gently down from above */
+.sa-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-18px);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Triggered (visible) state — applies to ALL animation types */
+.sa-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Stagger delays — more generous spacing for an unhurried, flowing feel */
+.sa-d1 { transition-delay: 0.20s; }
+.sa-d2 { transition-delay: 0.42s; }
+.sa-d3 { transition-delay: 0.64s; }
+.sa-d4 { transition-delay: 0.88s; }
+.sa-d5 { transition-delay: 1.12s; }
+.sa-d6 { transition-delay: 1.40s; }
+
+
+/* ================================================================
+   COLLAGE STRIP
+   ================================================================ */
+
+.collage-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.collage-header span {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #c9a84c;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.collage-header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  color: #c9a84c;
+  font-size: 13px;
+}
+
+.collage-header-divider::before,
+.collage-header-divider::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9a84c88);
+}
+
+.collage-header-divider::after {
+  background: linear-gradient(to left, transparent, #c9a84c88);
+}
+
+/* Strip grid */
+.collage-strip {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 1.1fr 0.8fr 1fr;
+  height: 290px;
+  overflow: hidden;
+  gap: 3px;
+}
+
+/* Each cell */
+.collage-cell {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.collage-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: saturate(0.92);
+}
+
+.collage-cell:hover img {
+  transform: scale(1.07);
+}
+
+.collage-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 14, 6, 0.38);
+  transition: background 0.6s ease;
+}
+
+.collage-cell:hover .collage-overlay {
+  background: rgba(20, 14, 6, 0.52);
+}
+
+/* Label block */
+.collage-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 18px;
+  gap: 6px;
+  text-align: center;
+  z-index: 2;
+}
+
+.collage-icon-ring {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201, 168, 76, 0.75);
+  background: rgba(201, 168, 76, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a84c;
+  font-size: 18px;
+  margin-bottom: 4px;
+  backdrop-filter: blur(2px);
+  transition: background 0.5s ease, border-color 0.5s ease;
+}
+
+.collage-cell:hover .collage-icon-ring {
+  background: rgba(201, 168, 76, 0.22);
+  border-color: rgba(201, 168, 76, 1);
+}
+
+.collage-title {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: #f5ead8;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.collage-sub {
+  margin: 0;
+  font-size: 10.5px;
+  color: rgba(245, 234, 216, 0.72);
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ================================================================
+   INTRO
+   ================================================================ */
+
+.intro-section {
+  max-width: 1380px;
+  margin: 100px auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.intro-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.oval-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Arch shape */
+.arch-main {
+  width: 380px;
+  height: 500px;
+  border-radius: 190px 190px 0 0;
+  overflow: hidden;
+  position: relative;
+  border: 6px solid var(--gold-pale);
+  box-shadow: 0 20px 60px rgba(123, 79, 46, .14);
+}
+
+.arch-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.oval-float {
+  position: absolute;
+  bottom: -30px;
+  right: 10px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--cream);
+  box-shadow: 0 8px 30px rgba(123, 79, 46, .2);
+}
+
+.oval-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oval-badge {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--cream);
+  box-shadow: 0 6px 20px rgba(123, 79, 46, .25);
+}
+
+.oval-badge .num {
+  font-size: 36px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+}
+
+.oval-badge .txt {
+  font-size: 7px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, .85);
+  text-align: center;
+  margin-top: 2px;
+}
+
+
+/* ================================================================
+   FEATURED
+   ================================================================ */
+
+.featured-section {
+  max-width: 1380px;
+  margin: 100px auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.featured-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image grid */
+.feat-images {
+  display: grid;
+  grid-template-rows: 55% 44%;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  height: 560px;
+}
+
+.feat-img-top {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.feat-img-bl {
+  grid-column: 1;
+  grid-row: 2;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.feat-img-br {
+  grid-column: 2;
+  grid-row: 2;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.feat-img-top img,
+.feat-img-bl img,
+.feat-img-br img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feat-img-top:hover img,
+.feat-img-bl:hover img,
+.feat-img-br:hover img {
+  transform: scale(1.04);
+}
+
+.stats-row {
+  background: linear-gradient(100deg, var(--coffee) 0%, var(--coffee-mid) 60%, #6B3E22 100%);
+  padding: 0px 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.stat-item {
+  padding: 36px 16px;
+  border-right: 1px solid rgba(201, 168, 76, .25);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-num {
+  font-size: 62px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 9.5px;
+  letter-spacing: 3px;
+  color: var(--gold-light);
+  margin-top: 10px;
+}
+
+
+/* ================================================================
+   WOW SECTION
+   ================================================================ */
+
+.wow-section-wrapper {
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+}
+
+.wow-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+/* Left: Images */
+.wow-images {
+  position: relative;
+  overflow: hidden;
+}
+
+.wow-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.06);
+  /* Slower, more stately zoom-out */
+  animation: wow-zoom-out 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wow-zoom-out {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.0); }
+}
+
+.wow-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(30, 20, 10, 0.45) 0%,
+    rgba(90, 60, 30, 0.15) 60%,
+    transparent 100%);
+  z-index: 1;
+}
+
+/* Circle portrait */
+.wow-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.88);
+  width: 52%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 0 0 10px rgba(201, 168, 76, 0.12),
+    0 0 0 20px rgba(201, 168, 76, 0.06),
+    0 30px 80px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  /* Gentle, unhurried entrance */
+  animation: wow-circle-in 1.8s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wow-circle-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.88);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.wow-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating badges */
+.wow-floater {
+  position: absolute;
+  z-index: 3;
+  background: rgba(15, 10, 5, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 4px;
+  padding: 10px 18px;
+}
+
+.wow-floater span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold, #c9a84c);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.wow-floater-1 {
+  bottom: 28%;
+  left: 8%;
+  animation: wow-fade-up 1.4s 1.2s both;
+}
+
+.wow-floater-2 {
+  top: 20%;
+  right: 8%;
+  animation: wow-fade-up 1.4s 1.6s both;
+}
+
+@keyframes wow-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Right: Text */
+.wow-text {
+  background: var(--coffee, #1e1208);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wow-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 110% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at -10% 80%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.wow-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    transparent,
+    rgba(201, 168, 76, 0.5) 30%,
+    rgba(201, 168, 76, 0.5) 70%,
+    transparent);
+}
+
+.wow-text-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+}
+
+/* Label */
+.wow-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 9px;
+  letter-spacing: 5px;
+  color: var(--gold, #c9a84c);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.wow-label-line {
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--gold, #c9a84c);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* Title */
+.wow-title {
+  font-size: clamp(40px, 4.5vw, 62px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--ivory, #f5f0e8);
+  margin: 0 0 24px;
+  letter-spacing: -0.5px;
+}
+
+.wow-title em {
+  font-style: italic;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.wow-em-gold {
+  font-style: italic;
+  color: var(--gold, #c9a84c) !important;
+  position: relative;
+}
+
+.wow-em-gold::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold, #c9a84c), transparent);
+}
+
+/* Body */
+.wow-body {
+  font-size: 15px;
+  color: rgba(245, 240, 232, 0.55);
+  margin: 0 0 40px;
+  line-height: 1.9;
+  font-weight: 300;
+  max-width: 360px;
+}
+
+/* Buttons */
+.wow-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 9px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.wow-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.04);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.wow-btn:hover::before { opacity: 1; }
+
+.wow-btn:hover .wow-btn-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+.wow-btn-arrow {
+  font-style: normal;
+  font-size: 14px;
+  opacity: 0.5;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.wow-btn-primary {
+  border: 1px solid rgba(201, 168, 76, 0.7);
+  color: var(--gold, #c9a84c);
+  background: transparent;
+}
+
+.wow-btn-primary:hover {
+  border-color: var(--gold, #c9a84c);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.wow-btn-mid {
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  color: rgba(245, 240, 232, 0.7);
+  background: rgba(201, 168, 76, 0.07);
+}
+
+.wow-btn-mid:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  color: var(--gold, #c9a84c);
+}
+
+.wow-btn-ghost {
+  border: 1px solid rgba(245, 240, 232, 0.1);
+  color: rgba(245, 240, 232, 0.4);
+  background: transparent;
+}
+
+.wow-btn-ghost:hover {
+  border-color: rgba(245, 240, 232, 0.25);
+  color: rgba(245, 240, 232, 0.7);
+}
+
+
+/* ================================================================
+   GALLERY PREVIEW
+   ================================================================ */
+
+.gallery-preview {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 250px 250px;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.gallery-cell {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-cell:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-cell:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-cell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(201, 168, 76, 0);
+  transition: background 0.6s ease;
+}
+
+.gallery-cell:hover::after {
+  background: rgba(201, 168, 76, .08);
+}
+
+/* ================================================================
+   RESPONSIVE — 1024px
+   ================================================================ */
+@media (max-width: 1024px) {
+
+  .intro-section,
+  .featured-section {
+    gap: 50px;
+    padding: 0 40px;
+  }
+
+  .arch-main {
+    width: 320px;
+    height: 430px;
+    border-radius: 160px 160px 0 0;
+  }
+
+  .oval-float {
+    width: 140px;
+    height: 140px;
+  }
+
+  .feat-images {
+    height: 500px;
+  }
+
+  .wow-text {
+    padding: 0 50px;
+  }
+
+  .wow-title {
+    font-size: clamp(36px, 4vw, 52px);
+  }
+
+  .gallery-preview {
+    padding: 80px 40px;
+  }
+
+  .gallery-grid {
+    grid-template-rows: 220px 220px;
+  }
+
+  .stats-row {
+    padding: 0 30px;
+  }
+
+  .stat-num {
+    font-size: 52px;
+  }
+
+  .collage-strip {
+    height: 240px;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 768px TABLET
+   ================================================================ */
+@media (max-width: 768px) {
+
+  .intro-section,
+  .featured-section,
+  .wow-section {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-section,
+  .featured-section {
+    margin: 70px auto;
+    padding: 0 24px;
+    gap: 45px;
+  }
+
+  .intro-text-col,
+  .featured-text-col {
+    order: 2;
+  }
+
+  .oval-wrap,
+  .feat-images {
+    order: 1;
+  }
+
+  .arch-main {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+  }
+
+  .oval-float {
+    width: 120px;
+    height: 120px;
+    right: 30px;
+    bottom: -20px;
+  }
+
+  .oval-badge {
+    width: 90px;
+    height: 90px;
+  }
+
+  .oval-badge .num {
+    font-size: 28px;
+  }
+
+  .feat-images {
+    height: 460px;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(201, 168, 76, .18);
+  }
+
+  .stat-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .wow-section-wrapper {
+    height: auto;
+  }
+
+  .wow-images {
+    height: 520px;
+  }
+
+  .wow-circle {
+    width: 55%;
+  }
+
+  .wow-text {
+    padding: 70px 30px;
+  }
+
+  .wow-text::after {
+    display: none;
+  }
+
+  .wow-text-inner {
+    max-width: 100%;
+  }
+
+  .wow-title {
+    font-size: 44px;
+  }
+
+  .wow-body {
+    max-width: 100%;
+  }
+
+  .gallery-preview {
+    padding: 70px 24px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 240px 240px 240px;
+    gap: 8px;
+  }
+
+  .gallery-cell:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .collage-strip {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+
+  .collage-cell {
+    height: 220px;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 420px MOBILE
+   ================================================================ */
+@media (max-width: 420px) {
+
+  .intro-section,
+  .featured-section {
+    margin: 55px auto;
+    padding: 0 18px;
+    gap: 36px;
+  }
+
+  .collage-header span {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .collage-header-divider::before,
+  .collage-header-divider::after {
+    width: 42px;
+  }
+
+  .collage-strip {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .collage-cell {
+    height: 220px;
+  }
+
+  .collage-label {
+    padding-bottom: 14px;
+  }
+
+  .collage-title {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+  }
+
+  .collage-sub {
+    font-size: 9px;
+  }
+
+  .collage-icon-ring {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .arch-main {
+    width: 100%;
+    max-width: 270px;
+    height: 360px;
+    border-radius: 140px 140px 0 0;
+    border-width: 4px;
+  }
+
+  .oval-float {
+    width: 95px;
+    height: 95px;
+    right: 10px;
+    bottom: -15px;
+    border-width: 3px;
+  }
+
+  .oval-badge {
+    width: 74px;
+    height: 74px;
+    left: 0;
+    top: -10px;
+    border-width: 3px;
+  }
+
+  .oval-badge .num {
+    font-size: 24px;
+  }
+
+  .oval-badge .txt {
+    font-size: 6px;
+  }
+
+  .feat-images {
+    height: 360px;
+    gap: 5px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    padding: 28px 10px;
+    border-bottom: 1px solid rgba(201, 168, 76, .16);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .stat-num {
+    font-size: 44px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .wow-images {
+    height: 380px;
+  }
+
+  .wow-circle {
+    width: 68%;
+    box-shadow:
+      0 0 0 6px rgba(201, 168, 76, 0.12),
+      0 0 0 12px rgba(201, 168, 76, 0.05),
+      0 18px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .wow-floater {
+    padding: 8px 12px;
+  }
+
+  .wow-floater span {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .wow-text {
+    padding: 55px 20px;
+  }
+
+  .wow-label {
+    gap: 10px;
+    font-size: 7px;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+  }
+
+  .wow-label-line {
+    width: 20px;
+  }
+
+  .wow-title {
+    font-size: 34px;
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+
+  .wow-body {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .wow-btn {
+    padding: 13px 16px;
+    font-size: 7px;
+    letter-spacing: 2.5px;
+  }
+
+  .gallery-preview {
+    padding: 55px 18px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 6px;
+    margin-top: 36px;
+  }
+
+  .gallery-cell,
+  .gallery-cell:first-child {
+    grid-column: auto;
+    grid-row: auto;
+    height: 240px;
+  }
+
+  .sa-fade-up,
+  .sa-fade-left,
+  .sa-fade-right,
+  .sa-scale,
+  .sa-word {
+    transition-duration: 1.1s;
+  }
+}

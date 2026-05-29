@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400;1,500&display=swap');
+
+/* ----------------------------------------------------------
+   Section wrapper
+   ---------------------------------------------------------- */
+.venue__services-section {
+    position: relative;
+    background: #F5EFE6;
+    padding: 30px 60px 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ----------------------------------------------------------
+   Floral corner images
+   ---------------------------------------------------------- */
+.venue__floral {
+    position: absolute;
+    width: 340px;
+    height: auto;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 0;
+    top: 0;
+}
+
+.venue__floral--left {
+    left: 0;
+    transform: none;
+}
+
+.venue__floral--right {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+/* ----------------------------------------------------------
+   Inner content sits above the floral images
+   ---------------------------------------------------------- */
+.venue__services-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* ----------------------------------------------------------
+   Section header — eyebrow
+   ---------------------------------------------------------- */
+.venue__services-eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #B8922A;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    /* Scroll animation */
+    opacity: 0;
+    transform: translateY(-30px);
+    transition:
+        opacity 1.2s cubic-bezier(0.06, 0.9, 0.2, 1),
+        transform 1.2s cubic-bezier(0.06, 0.9, 0.2, 1);
+}
+
+.venue__services-eyebrow.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.venue__services-eyebrow::before,
+.venue__services-eyebrow::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 0.5px;
+    background: #B8922A;
+}
+
+/* ----------------------------------------------------------
+   Heading — static container, no animation on it
+   ---------------------------------------------------------- */
+.venue__services-heading {
+    font-size: 42px;
+    font-weight: 400;
+    color: #1A1208;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.venue__services-heading em {
+    font-style: italic;
+    font-weight: 500;
+    color: #B8922A;
+    font-size: 52px;
+}
+
+/* ----------------------------------------------------------
+   Word-by-word animation
+   ---------------------------------------------------------- */
+.venue__heading-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-28px);
+    transition:
+        opacity 1s cubic-bezier(0.06, 0.9, 0.2, 1),
+        transform 1s cubic-bezier(0.06, 0.9, 0.2, 1);
+}
+
+.venue__heading-word.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------------------------------------------------
+   Cards grid — 4 columns × 2 rows
+   ---------------------------------------------------------- */
+.venue__services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1500px;
+    margin: 60px auto 0;
+    align-items: stretch;
+}
+
+/* ----------------------------------------------------------
+   Individual card
+   ---------------------------------------------------------- */
+.venue__card {
+    position: relative;
+    background: #FDFAF5;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid rgba(184, 146, 42, 0.45);
+    height: auto;
+}
+
+.venue__card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 24px 60px rgba(100, 65, 10, 0.18);
+    z-index: 2;
+}
+
+/* ----------------------------------------------------------
+   Gold bottom bar — revealed on hover
+   ---------------------------------------------------------- */
+.venue__card-hover-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #D4A843, #8B6220, #D4A843);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.venue__card:hover .venue__card-hover-bar {
+    transform: scaleX(1);
+}
+
+/* ----------------------------------------------------------
+   Card image area
+   ---------------------------------------------------------- */
+.venue__card-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: visible;
+    flex-shrink: 0;
+}
+
+.venue__card-icon-ring svg {
+    font-size: 1.8rem;
+    color: #B8922A;
+    opacity: 0.95;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.venue__service-card:hover .venue__card-icon-ring svg {
+    transform: scale(1.06);
+    color: #c9a13a;
+}
+
+.venue__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: saturate(0.88) brightness(0.97);
+}
+
+.venue__card:hover .venue__card-image {
+    transform: scale(1.08);
+}
+
+/* Dark gradient overlay on image */
+.venue__card-image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(20, 12, 2, 0.52) 100%);
+    pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   Icon ring — centred on the image / card body boundary
+   ---------------------------------------------------------- */
+.venue__card-icon-ring {
+    position: absolute;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid #D4A843;
+    background: #FDFAF5;
+    box-shadow: 0 2px 12px rgba(123, 79, 46, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------
+   Card body
+   ---------------------------------------------------------- */
+.venue__card-body {
+    padding: 42px 22px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.venue__card-title {
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    color: #1A1208;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgba(212, 168, 67, 0.35);
+    width: 100%;
+    text-align: center;
+}
+
+.venue__card-desc {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #5C4020;
+    font-weight: 300;
+}
+
+/* ----------------------------------------------------------
+   Bottom divider ornament
+   ---------------------------------------------------------- */
+.venue__services-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 60px;
+    opacity: 0.5;
+}
+
+.venue__services-divider-line {
+    display: block;
+    height: 0.5px;
+    width: 80px;
+    background: #B8922A;
+}
+
+/* ----------------------------------------------------------
+   Scroll-triggered entrance
+   Top row: slides down from above
+   Bottom row: slides up from below
+   ---------------------------------------------------------- */
+.venue__card--slide-top {
+    opacity: 0;
+    transform: translateY(-55px);
+    transition:
+        opacity 2.8s cubic-bezier(0.06, 0.9, 0.2, 1),
+        transform 2.8s cubic-bezier(0.06, 0.9, 0.2, 1);
+}
+
+.venue__card--slide-bottom {
+    opacity: 0;
+    transform: translateY(55px);
+    transition:
+        opacity 2.8s cubic-bezier(0.06, 0.9, 0.2, 1),
+        transform 2.8s cubic-bezier(0.06, 0.9, 0.2, 1);
+}
+
+.venue__card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ============================================================
+   VENUE SERVICES SECTION — RESPONSIVE (1024px / 768px / 420px)
+   ============================================================ */
+
+/* -------------------- 1024px -------------------- */
+@media (max-width: 1024px) {
+
+  .venue__services-section {
+    padding: 60px 40px;
+  }
+
+  .venue__floral {
+    width: 260px;
+    opacity: 0.7;
+  }
+
+  .venue__services-heading {
+    font-size: 34px;
+  }
+
+  .venue__services-heading em {
+    font-size: 44px;
+  }
+
+  .venue__services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 50px;
+  }
+
+  .venue__card-image-wrap {
+    height: 160px;
+  }
+
+  .venue__card-body {
+    padding: 36px 18px 28px;
+  }
+}
+
+
+/* -------------------- 768px -------------------- */
+@media (max-width: 768px) {
+
+  .venue__services-section {
+    padding: 50px 24px;
+  }
+
+  .venue__floral {
+    display: none; /* cleaner mobile layout */
+  }
+
+  .venue__services-heading {
+    font-size: 30px;
+  }
+
+  .venue__services-heading em {
+    font-size: 36px;
+  }
+
+  .venue__services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .venue__card {
+    border-width: 1.5px;
+  }
+
+  .venue__card-image-wrap {
+    height: 150px;
+  }
+
+  .venue__card-body {
+    padding: 34px 16px 24px;
+  }
+
+  .venue__card-desc {
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  .venue__card-icon-ring {
+    width: 46px;
+    height: 46px;
+    bottom: -22px;
+  }
+}
+
+
+/* -------------------- 420px -------------------- */
+@media (max-width: 420px) {
+
+  .venue__services-section {
+    padding: 40px 16px;
+  }
+
+  .venue__services-heading {
+    font-size: 24px;
+  }
+
+  .venue__services-heading em {
+    font-size: 30px;
+  }
+
+  .venue__services-eyebrow {
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+  .venue__services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .venue__card-image-wrap {
+    height: 160px;
+  }
+
+  .venue__card-body {
+    padding: 30px 14px 22px;
+  }
+
+  .venue__card-title {
+    font-size: 10px;
+  }
+
+  .venue__card-desc {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .venue__card-icon-ring {
+    width: 44px;
+    height: 44px;
+    bottom: -20px;
+  }
+
+  .venue__services-divider-line {
+    width: 50px;
+  }
+}

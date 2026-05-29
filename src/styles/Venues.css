@@ -1,0 +1,413 @@
+.venues-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  max-width: 100%;
+}
+
+.venue-card {
+  background: var(--white);
+  transition: box-shadow .4s;
+  border: 1px solid rgba(201, 168, 76, .12);
+}
+
+.venue-card:hover {
+  box-shadow: 0 22px 60px rgba(123, 79, 46, .14);
+}
+
+.venue-card-img {
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+}
+
+.venue-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.venue-card:hover .venue-card-img img {
+  transform: scale(1.07);
+}
+
+.venue-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(46, 26, 14, .3) 100%);
+}
+
+.venue-card-body {
+  padding: 42px;
+}
+
+.venue-tag {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.venue-name {
+  font-size: 34px;
+  font-weight: 400;
+  /* was 300 */
+  color: #1a1008;
+  /* was var(--text-dark) — deepened for contrast */
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.venue-desc {
+  font-size: 15px;
+  color: #3d2b1a;
+  /* was var(--text-mid) — much darker */
+  line-height: 1.9;
+  font-weight: 400;
+  /* was 300 */
+  margin-bottom: 26px;
+}
+
+.venue-features {
+  list-style: none;
+  margin: 20px 0 28px;
+}
+
+.venue-features li {
+  font-size: 13.5px;
+  color: #3d2b1a;
+  /* was var(--text-mid) */
+  font-weight: 400;
+  /* was 300 */
+  padding: 7px 0;
+  border-bottom: 1px solid var(--gold-pale);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.venue-features li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 8px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   VENUE META ICON ALIGNMENT
+   ========================= */
+
+.venue-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-bottom: 24px;
+}
+
+.venue-meta-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 600;
+  /* was 500 */
+  letter-spacing: 1.4px;
+  line-height: 1;
+
+  color: #4a3520;
+  /* was var(--text-light) — much darker */
+  white-space: nowrap;
+}
+
+/* PERFECT ICON POSITIONING */
+.venue-meta-item svg {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+
+  color: var(--gold);
+
+  display: block;
+  flex-shrink: 0;
+
+  position: relative;
+  top: -0.5px;
+}
+
+/* ================================================================
+   SCROLL ANIMATION SYSTEM
+   ================================================================ */
+
+.sa-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-fade-left {
+  opacity: 0;
+  transform: translateX(-38px);
+  transition:
+    opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-scale {
+  opacity: 0;
+  transform: scale(0.97);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-18px);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Feature list items — slide in from left one by one */
+.sa-feature {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Triggered state */
+.sa-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Stagger delays */
+.sa-d1 {
+  transition-delay: 0.18s;
+}
+
+.sa-d2 {
+  transition-delay: 0.36s;
+}
+
+.sa-d3 {
+  transition-delay: 0.54s;
+}
+
+.sa-d4 {
+  transition-delay: 0.72s;
+}
+
+.sa-d5 {
+  transition-delay: 0.90s;
+}
+
+
+/* ================================================================
+   VENUE CARD — INDIVIDUAL CHILD ANIMATIONS
+   ================================================================ */
+
+/* Hidden state — every animated child starts here */
+.v-anim {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Image gets a gentle scale instead of slide */
+.venue-card-img.v-anim {
+  transform: scale(0.97);
+  transition:
+    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Feature list items slide in from left */
+.venue-features .v-anim {
+  transform: translateX(-20px);
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Triggered — everything resolves to natural position */
+.v-anim-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* ================================================================
+   PAGE HERO SCROLL ANIMATIONS
+   ================================================================ */
+
+.sa-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-18px);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sa-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.sa-d1 {
+  transition-delay: 0.22s;
+}
+
+.sa-d2 {
+  transition-delay: 0.44s;
+}
+
+.sa-d3 {
+  transition-delay: 0.66s;
+}
+
+/* =========================================================
+   VENUES GRID RESPONSIVE
+   ========================================================= */
+
+/* =========================
+   ≤ 1024px (Tablet landscape)
+   ========================= */
+@media (max-width: 1024px) {
+
+  .venues-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .venue-card-img {
+    height: 300px;
+  }
+
+  .venue-card-body {
+    padding: 34px;
+  }
+
+  .venue-name {
+    font-size: 30px;
+  }
+
+  .venue-desc {
+    font-size: 14px;
+  }
+
+  .venue-meta {
+    gap: 12px 18px;
+  }
+}
+
+/* =========================
+   ≤ 768px (Tablet portrait / large mobile)
+   ========================= */
+@media (max-width: 768px) {
+
+  .venues-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-card-img {
+    height: 260px;
+  }
+
+  .venue-card-body {
+    padding: 28px 22px;
+  }
+
+  .venue-name {
+    font-size: 26px;
+  }
+
+  .venue-desc {
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+
+  .venue-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .venue-meta-item {
+    font-size: 10.5px;
+  }
+
+  .venue-features li {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   ≤ 420px (Small mobile)
+   ========================= */
+@media (max-width: 420px) {
+
+  .venues-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-card-img {
+    height: 220px;
+  }
+
+  .venue-card-body {
+    padding: 20px 16px;
+  }
+
+  .venue-name {
+    font-size: 22px;
+  }
+
+  .venue-desc {
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+
+  .venue-tag {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+  }
+
+  .venue-features li {
+    font-size: 12.5px;
+    padding: 6px 0;
+  }
+
+  .venue-meta {
+    gap: 8px;
+  }
+
+  .venue-meta-item {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .venue-meta-item svg {
+    width: 12px;
+    height: 12px;
+  }
+}

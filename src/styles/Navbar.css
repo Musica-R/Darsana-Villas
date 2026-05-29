@@ -1,0 +1,191 @@
+/* ── CSS VARIABLES (add to your global if not already) ── */
+/* --gold: #c9a84c; --gold-light: #e2c070; --gold-dark: #a07830;
+   --text-dark: #2b1b12; --text-mid: #5a3e2b; --cream: #fdfaf5; */
+
+/* ── NAVBAR BASE ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  padding: 0 60px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(253, 250, 245, 0.98);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+  box-shadow: 0 2px 40px rgba(123, 79, 46, 0.10);
+}
+
+/* ── LAYOUT SLOTS ── */
+.navbar__left,
+.navbar__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__right {
+  justify-content: flex-end;
+}
+
+/* ── NAV LINKS ── */
+.nav-links {
+  display: flex;
+  gap: 42px;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
+  color: rgba(255, 255, 255, 0.90);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.navbar--scrolled .nav-links a {
+  color: var(--text-mid);
+  text-shadow: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold-light);
+}
+
+.navbar--scrolled .nav-links a:hover,
+.navbar--scrolled .nav-links a.active {
+  color: var(--gold-dark);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: #c9a84c;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a::before { display: none; }
+
+/* ── LOGO ── */
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.15;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
+  transition: color 0.5s ease, text-shadow 0.5s ease;
+  white-space: nowrap;
+}
+
+.navbar--scrolled .nav-logo {
+  color: var(--text-dark);
+  text-shadow: none;
+}
+
+.nav-logo span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+  transition: color 0.5s ease;
+}
+
+.navbar--scrolled .nav-logo span { color: var(--gold); }
+
+.nav-logo small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 6px;
+  font-style: normal;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.5s ease;
+}
+
+.navbar--scrolled .nav-logo small { color: var(--coffee-light); }
+
+/* ── HAMBURGER — hidden on desktop ── */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  z-index: 1100;
+  padding: 6px;
+  line-height: 1;
+  transition: color 0.4s ease;
+}
+
+.navbar--scrolled .hamburger {
+  color: var(--text-dark);
+}
+
+/* ── MOBILE SPACER — balances logo center on mobile ── */
+.mobile-spacer { display: none; }
+
+/* ════════════════════════════════
+   MOBILE  ≤ 768px
+════════════════════════════════ */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+    
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-logo {
+    font-size: 26px;
+  }
+
+  .nav-logo small {
+    font-size: 8px;
+    letter-spacing: 4px;
+  }
+
+  /* Right slot: show spacer to mirror hamburger width → logo stays centered */
+  .mobile-spacer {
+    display: block;
+    width: 36px;
+    height: 36px;
+  }
+}
