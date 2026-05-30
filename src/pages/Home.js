@@ -190,7 +190,7 @@ function Home() {
           <div className="gold-divider sa-fade-up sa-d2"><span>✦</span></div>
 
           <p className="section-body sa-fade-up sa-d3">
-            Nestled in the heart of Bangalore, Darsana Villas is more than a venue — it's a sanctuary
+            Nestled in the heart of Bangalore, Darsana Events is more than a venue — it's a sanctuary
             where your most cherished celebrations come to life. Our lush gardens, grand ballrooms,
             and dedicated team of event specialists ensure every detail is handled with the utmost
             care and elegance.
@@ -235,8 +235,8 @@ function Home() {
 
       {/* FEATURED */}
       <section className="featured-section">
-        <div className="featured-text-col">
-          <p className="section-label sa-fade-up">THE DARSANA VILLAS PROMISE</p>
+        <div className="featured-text-col"> 
+          <p className="section-label sa-fade-up">THE DARSANA EVENTS PROMISE</p>
 
           <h2 className="section-title">
             <span className="sa-word">Luxury in&nbsp;</span>
@@ -348,7 +348,7 @@ function Home() {
               </h2>
 
               <p className="wow-body sa-fade-up sa-d4">
-                And create a day nothing less than unforgettable. We are the Darsana Villas team
+                And create a day nothing less than unforgettable. We are the Darsana Events team
                 to help you do exactly that.
               </p>
 

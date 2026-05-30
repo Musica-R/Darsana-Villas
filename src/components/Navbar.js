@@ -47,7 +47,7 @@ function Navbar() {
 
         {/* CENTER — Logo always */}
         <Link to="/" className="nav-logo">
-          Darsana <span>Villas</span>
+          Darsana <span>Events</span>
           <small>LUXURY EVENT VENUE</small>
         </Link>
 

@@ -107,7 +107,7 @@ ${form.vision}
           </div>
           <div className="c-detail">
             <strong>FOLLOW US</strong>
-            <p>@darsanavillas_events<br />Instagram · Facebook · Pinterest</p>
+            <p>@darsana_events<br />Instagram · Facebook · Pinterest</p>
           </div>
         </div>
 

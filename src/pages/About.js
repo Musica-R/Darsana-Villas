@@ -85,7 +85,7 @@ function About() {
         currentPage="ABOUT"
         label="OUR STORY"
         title={`More Than a Venue &ndash;<br /><em>A Legacy</em>`}
-        body={`For over 15 years, Darsana Villas has been Bangalore's most beloved luxury event destination, where every celebration is treated as a work of art.`}
+        body={`For over 15 years, Darsana Events has been Bangalore's most beloved luxury event destination, where every celebration is treated as a work of art.`}
         showStats={true}
         image="/assets/white.webp"
       />
@@ -94,7 +94,7 @@ function About() {
       <div className="about-story">
         <div className="oval-wrap-about sa-fade-left">
           <div className="oval-about-main">
-            <img src="/assets/col6.jpg" alt="Darsana Villas" />
+            <img src="/assets/col6.jpg" alt="Darsana Events" />
           </div>
         </div>
         <div>
@@ -106,7 +106,7 @@ function About() {
           </h2>
           <div className="gold-divider sa-fade-up sa-d2"><span>✦</span></div>
           <p className="section-body sa-fade-up sa-d3">
-            Darsana Villas was founded in 2009 with a single vision: to create a sanctuary where
+            Darsana Events was founded in 2009 with a single vision: to create a sanctuary where
             life's most precious celebrations could unfold in surroundings of breathtaking natural
             beauty and uncompromising luxury.
           </p>

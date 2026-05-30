@@ -15,7 +15,7 @@ const BG_IMAGE_URL =
 
 const testimonials = [
   {
-    t: "Darsana Villas made our wedding an absolute dream. Every detail was handled with such grace and professionalism. The gardens were breathtaking, and our guests are still talking about how magical the evening was.",
+    t: "Darsana Events made our wedding an absolute dream. Every detail was handled with such grace and professionalism. The gardens were breathtaking, and our guests are still talking about how magical the evening was.",
     a: "PRIYA & ARJUN",
     year: "WEDDING 2024",
   },
@@ -30,12 +30,12 @@ const testimonials = [
     year: "WEDDING 2023",
   },
   {
-    t: "Choosing Darsana Villas was the best decision we made. The staff treated us like royalty and the venue felt like something straight out of a fairytale. Truly an unforgettable experience.",
+    t: "Choosing Darsana Events was the best decision we made. The staff treated us like royalty and the venue felt like something straight out of a fairytale. Truly an unforgettable experience.",
     a: "DIVYA & VIKRAM",
     year: "WEDDING 2023",
   },
   {
-    t: "The attention to detail at Darsana Villas is unparalleled. From the moment we arrived, every corner was adorned with love. Our ceremony by the gardens was nothing short of a fairytale come true.",
+    t: "The attention to detail at Darsana Events is unparalleled. From the moment we arrived, every corner was adorned with love. Our ceremony by the gardens was nothing short of a fairytale come true.",
     a: "SNEHA & RAHUL",
     year: "WEDDING 2024",
   },

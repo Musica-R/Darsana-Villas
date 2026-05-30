@@ -41,7 +41,7 @@ function MobileArrow() {
   // WHATSAPP DEFAULT MESSAGE
 
   const whatsappMessage = encodeURIComponent(
-    "Hello Darsana Villas,\n\nI would like to know more about your luxury event venue, wedding packages, stay options, and event services. Please share the details.\n\nThank you."
+    "Hello Darsana Events,\n\nI would like to know more about your luxury event venue, wedding packages, stay options, and event services. Please share the details.\n\nThank you."
   );
 
   return (

@@ -16,7 +16,7 @@ function Footer() {
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand">
-            <div className="f-logo">Darsana  <span>Villas</span></div>
+            <div className="f-logo">Darsana  <span>Events</span></div>
             <div className="f-tagline">LUXURY EVENT VENUE · BANGALORE</div>
             <p>A sanctuary of elegance where love stories unfold, milestones are celebrated, and memories are crafted to last a lifetime. Bangalore's most cherished luxury event destination since 2009.</p>
             <div className="footer-social">
@@ -66,7 +66,7 @@ function Footer() {
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">EMAIL</span>
-              <span className="f-contact-val">events@darsanavillasgarden.in</span>
+              <span className="f-contact-val">events@darsanaeventsgarden.in</span>
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">HOURS</span>
@@ -78,14 +78,14 @@ function Footer() {
         <hr className="footer-divider" />
 
         <div className="footer-bottom">
-          <p>© 2025 Darsana Villas. All Rights Reserved.</p>
+          <p>© 2025 Darsana Events. All Rights Reserved.</p>
 
-            <a href="https://mpeoples.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", cursor: "pointer"}}><p>Developed by Mpeoples Business Solutions Private Limited</p></a>
+            <a href="https://mpeoples.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", cursor: "pointer"}}><p>Developed by Mpeoples </p></a>
 
           <nav>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Terms of Use</a>
-            <a href="/">Sitemap</a>
+            {/* <a href="/">Privacy Policy</a>
+            <a href="/">Terms of Use</a> */}
+            <a href="/contact">Sitemap</a>
           </nav>
         </div>
       </footer>

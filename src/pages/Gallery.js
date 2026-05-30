@@ -29,7 +29,7 @@ function Gallery() {
       <section className="page-hero">
         <p className="section-label">OUR PORTFOLIO</p>
         <h1 className="section-title">A Glimpse of <em>Moments</em></h1>
-        <p>Every image tells the story of a day crafted with love and precision. Browse our gallery to envision your own celebration at Darsana Villas.</p>
+        <p>Every image tells the story of a day crafted with love and precision. Browse our gallery to envision your own celebration at Darsana Events.</p>
       </section>
 
       <div className="gallery-filter">
