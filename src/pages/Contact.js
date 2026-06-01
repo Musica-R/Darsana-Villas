@@ -188,12 +188,12 @@ ${form.vision}
         </div>
         <div className="map-embed">
           <iframe
-            title="Our Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.1!2d76.5794!3d10.7867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c1e5d1c3a7b5%3A0x92Xwgj15N2yNrXMU8!2sKing+%26+queen+unisex+beauty+parlour!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            title="Darsana Event Space Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.046441069856!2d76.61156629999999!3d10.730901599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8734a762d02b1%3A0x3a13723ab6749e22!2sDarsana%20Event%20Space!5e0!3m2!1sen!2sin!4v1780292223945!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
-            allowFullScreen=""
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

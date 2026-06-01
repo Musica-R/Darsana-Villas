@@ -353,7 +353,7 @@ export default function TestimonialSection() {
                   </div>
                   <p className="ts-quote">"{item.t}"</p>
                   <div className="ts-divider">
-                    <span className="ts-div-gem">❧</span>
+                    <span className="ts-div-gem">❤</span>
                   </div>
                   <p className="ts-author">{item.a}</p>
                   <p className="ts-year">{item.year}</p>

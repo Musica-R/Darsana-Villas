@@ -36,13 +36,11 @@ function Navbar() {
             <NavLink to="/event">EVENTS</NavLink>
           </div>
           {/* Mobile only */}
-          <button
-            className="hamburger"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
+          
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
             {menuOpen ? '✕' : '☰'}
           </button>
+
         </div>
 
         {/* CENTER — Logo always */}
