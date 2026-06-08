@@ -62,7 +62,7 @@ function Footer() {
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">PHONE</span>
-              <span className="f-contact-val">09447003343<br /></span>
+              <span className="f-contact-val">77362 57634<br /></span>
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">EMAIL</span>

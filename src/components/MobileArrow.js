@@ -50,7 +50,7 @@ function MobileArrow() {
       {/* WHATSAPP BUTTON */}
 
       <a
-        href={`https://api.whatsapp.com/send?phone=918610766168&text=${whatsappMessage}`}
+        href={`https://api.whatsapp.com/send?phone=917736257634&text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         className={`whatsapp-btn ${showButtons ? "show" : ""}`}

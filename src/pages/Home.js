@@ -7,6 +7,7 @@ import { GiBigDiamondRing, GiFlowerPot, GiPartyPopper, GiMusicalNotes } from 're
 import { MdCorporateFare } from 'react-icons/md';
 import TestimonialSection from '../components/Testimonialsection';
 import { useEffect, useRef, useState } from "react";
+// import VideoSection from '../components/Videosection';
 
 const COLLAGE_ITEMS = [
   {
@@ -371,6 +372,8 @@ function Home() {
 
         </div>
       </section>
+
+      {/* <VideoSection /> */}
 
     </div>
   );

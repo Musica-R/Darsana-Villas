@@ -33,7 +33,6 @@ const services = [
     label: 'ATMOSPHERIC LIGHTING',
     title: 'Lighting & Ambience',
     desc: 'Transform every celebration into an unforgettable visual experience with our bespoke lighting artistry. From crystal chandeliers and candlelit pathways to intelligent mood lighting and immersive stage illumination, every detail is designed to elevate the atmosphere with elegance and drama.',
-
     features: [
       'Luxury chandelier & pendant lighting',
       'Ambient mood & architectural illumination',
@@ -41,7 +40,6 @@ const services = [
       'Fairy lights & outdoor canopy installations',
       'Custom colour themes & visual effects',
     ],
-
     reverse: true,
   },
   {
@@ -49,7 +47,6 @@ const services = [
     label: 'CURATED ENTERTAINMENT',
     title: 'Music, DJ & Live Performances',
     desc: 'From sophisticated live ensembles to high-energy celebrity DJs, our entertainment experiences are curated to match the spirit of your celebration. Every performance is seamlessly coordinated to create unforgettable moments on and off the dance floor.',
-
     features: [
       'Professional DJ & premium sound setup',
       'Live bands, classical & fusion performers',
@@ -57,7 +54,6 @@ const services = [
       'Dance floor, stage & special effects setup',
       'Personalised playlists & event coordination',
     ],
-
     reverse: false,
   },
   {
@@ -65,7 +61,6 @@ const services = [
     label: 'TIMELESS STORYTELLING',
     title: 'Photography & Wedding Cinematics',
     desc: 'Our creative photography and cinematography team captures every emotion, detail, and celebration with an editorial luxury aesthetic. From intimate candid moments to cinematic wedding films, your story is preserved beautifully for generations.',
-
     features: [
       'Luxury candid & traditional photography',
       'Cinematic wedding film production',
@@ -73,13 +68,35 @@ const services = [
       'Bridal portraits & couple sessions',
       'Same-day teaser edits & highlight reels',
     ],
-
     reverse: true,
   },
 ];
 
+function useScrollAnimate() {
+  useEffect(() => {
+    const rows = document.querySelectorAll('.svc-row');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('sa-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    rows.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+}
+
 function Services() {
   useEffect(() => { window.scrollTo({ top: 0 }); }, []);
+  useScrollAnimate();
+
   return (
     <div className="services-page">
       <DarsanaAboutHero

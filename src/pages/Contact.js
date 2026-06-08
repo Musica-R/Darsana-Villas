@@ -52,7 +52,7 @@ ${form.vision}
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     const whatsappURL =
-      `https://api.whatsapp.com/send?phone=918610766168&text=${encodedMessage}`;
+      `https://api.whatsapp.com/send?phone=917736257634&text=${encodedMessage}`;
 
     // OPEN WHATSAPP
 
@@ -99,7 +99,7 @@ ${form.vision}
           </div>
           <div className="c-detail">
             <strong>PHONE &amp; EMAIL</strong>
-            <p>+91 09447003343<br /><br />events@darsanavillasgarden.in</p>
+            <p>+91 77362 57634<br /><br />events@darsanavillasgarden.in</p>
           </div>
           <div className="c-detail">
             <strong>HOURS</strong>
