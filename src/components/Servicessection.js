@@ -1,71 +1,40 @@
 import "../styles/Servicessection.css";
 
-import { GiBigDiamondRing, GiFlowerPot, GiMusicalNotes, GiTheaterCurtains } from "react-icons/gi";
+import { GiBigDiamondRing, GiFlowerPot, GiPartyPopper } from "react-icons/gi";
 import { MdCorporateFare } from "react-icons/md";
-import { FaGlassCheers } from "react-icons/fa";
-import { GiPartyPopper } from "react-icons/gi";
-import { GiCandleHolder } from "react-icons/gi";
 import React, { useEffect } from "react";
 
 const ICONS = {
-    weddings: <GiBigDiamondRing />,
-    receptions: <FaGlassCheers />,
+    wedding_reception: <GiBigDiamondRing />,
+    intimate_wedding: <GiFlowerPot />,
+    milestones: <GiPartyPopper />,
     corporate: <MdCorporateFare />,
-    garden: <GiFlowerPot />,
-    parties: <GiPartyPopper />,
-    cultural: <GiTheaterCurtains />,
-    gala: <GiCandleHolder />,
-    entertainment: <GiMusicalNotes />,
 };
 
 const services = [
     {
         img: "/assets/wed.jpg",
-        icon: "weddings",
-        title: "WEDDINGS",
-        desc: "From intimate ceremonies to grand celebrations, we craft weddings that perfectly reflect your love story.",
+        icon: "wedding_reception",
+        title: "WEDDING RECEPTION",
+        desc: "From the first decoration to the final farewell, we orchestrate grand receptions with the elegance and precision that only 40 years of experience can deliver.",
     },
     {
         img: "/assets/rec.jpg",
-        icon: "receptions",
-        title: "RECEPTIONS",
-        desc: "Timeless elegance with modern luxury — the perfect setting for guests to celebrate alongside you.",
+        icon: "intimate_wedding",
+        title: "INTIMATE WEDDINGS",
+        desc: "Small in size, immense in feeling — our intimate wedding setups create deeply personal ceremonies wrapped in warmth and timeless beauty.",
+    },
+    {
+        img: "/assets/party.jpg",
+        icon: "milestones",
+        title: "BIRTHDAYS & MILESTONES",
+        desc: "Whether it's a first birthday or a golden jubilee, we transform every family milestone into a celebration that will be cherished for generations.",
     },
     {
         img: "/assets/cor.jpg",
         icon: "corporate",
-        title: "CORPORATE EVENTS",
-        desc: "Impress clients and inspire teams with world-class corporate gatherings in our versatile venues.",
-    },
-    {
-        img: "/assets/gar.jpg",
-        icon: "garden",
-        title: "GARDEN SOIRÉES",
-        desc: "Step into our enchanting gardens for open-air events at golden hour surrounded by nature's finest.",
-    },
-    {
-        img: "/assets/party.jpg",
-        icon: "parties",
-        title: "PRIVATE PARTIES",
-        desc: "Milestone birthdays, anniversaries — bespoke private events that feel effortlessly luxurious.",
-    },
-    {
-        img: "/assets/cul.jpg",
-        icon: "cultural",
-        title: "CULTURAL EVENTS",
-        desc: "Celebrate tradition in style — rich ceremonies blending heritage with contemporary elegance.",
-    },
-    {
-        img: "/assets/gala.jpg",
-        icon: "gala",
-        title: "GALA DINNERS",
-        desc: "Sumptuous multi-course dinners under crystal chandeliers with our award-winning culinary team.",
-    },
-    {
-        img: "/assets/eve.jpg",
-        icon: "entertainment",
-        title: "ENTERTAINMENT",
-        desc: "State-of-the-art sound, lighting, and staging for performances, concerts, and grand showcases.",
+        title: "CORPORATE & SEMINARS",
+        desc: "Impress clients, inspire teams, and host impactful seminars in our versatile, well-equipped venues — professional settings with seamless hospitality.",
     },
 ];
 

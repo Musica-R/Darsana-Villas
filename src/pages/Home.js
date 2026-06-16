@@ -3,7 +3,7 @@ import '../styles/Home.css';
 import HeroSection from '../components/Herosection';
 import { useNavigate } from 'react-router-dom';
 import ServicesSection from '../components/Servicessection';
-import { GiBigDiamondRing, GiFlowerPot, GiPartyPopper, GiMusicalNotes } from 'react-icons/gi';
+import { GiBigDiamondRing, GiFlowerPot, GiPartyPopper } from 'react-icons/gi';
 import { MdCorporateFare } from 'react-icons/md';
 import TestimonialSection from '../components/Testimonialsection';
 import { useEffect, useRef, useState } from "react";
@@ -12,38 +12,31 @@ import { useEffect, useRef, useState } from "react";
 const COLLAGE_ITEMS = [
   {
     img: '/assets/col1.jpg',
-    alt: 'wedding',
+    alt: 'wedding reception',
     icon: <GiBigDiamondRing />,
-    label: 'WEDDINGS',
-    sub: 'Where love stories begin',
-  },
-  {
-    img: '/assets/col3.jpg',
-    alt: 'corporate',
-    icon: <MdCorporateFare />,
-    label: 'CORPORATE EVENTS',
-    sub: 'Professional. Polished. Perfect.',
+    label: 'WEDDING RECEPTION',
+    sub: 'Grand celebrations, timeless elegance',
   },
   {
     img: '/assets/col2.jpg',
-    alt: 'social',
-    icon: <GiPartyPopper />,
-    label: 'SOCIAL CELEBRATIONS',
-    sub: 'Moments with your loved ones',
-  },
-  {
-    img: '/assets/col4.webp',
-    alt: 'entertainment',
-    icon: <GiMusicalNotes />,
-    label: 'LIVE ENTERTAINMENT',
-    sub: 'Music. Energy. Experience.',
-  },
-  {
-    img: '/assets/col5.webp',
-    alt: 'picture',
+    alt: 'intimate wedding',
     icon: <GiFlowerPot />,
-    label: 'PICTURE PERFECT',
-    sub: 'Every frame, timeless',
+    label: 'INTIMATE WEDDINGS',
+    sub: 'Close hearts, cherished moments',
+  },
+  {
+    img: '/assets/birthday.webp',
+    alt: 'family milestones',
+    icon: <GiPartyPopper />,
+    label: 'BIRTHDAYS & MILESTONES',
+    sub: 'Every milestone, beautifully marked',
+  },
+  {
+    img: '/assets/col3.jpg',
+    alt: 'corporate events',
+    icon: <MdCorporateFare />,
+    label: 'CORPORATE & SEMINARS',
+    sub: 'Professional. Polished. Purposeful.',
   },
 ];
 
@@ -59,10 +52,8 @@ function AnimatedCounter({ target, suffix = "", delay = 0 }) {
       ([entry]) => {
         if (entry.isIntersecting && !animated.current) {
           animated.current = true;
-          // Slower, more graceful count — 8 seconds with a gentle ease-out
           const duration = 8000;
           const start = performance.now();
-          // Softer ease: ease-out cubic feels more elegant than quartic
           const ease = (t) => 1 - Math.pow(1 - t, 3);
           setTimeout(() => {
             const tick = (now) => {
@@ -106,7 +97,6 @@ function useScrollAnimate() {
           }
         });
       },
-      // Lower threshold so elements begin their gentle reveal earlier
       { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
     );
 
@@ -143,7 +133,6 @@ function Home() {
 
         <div className="collage-strip">
           {COLLAGE_ITEMS.map((item, i) => (
-
             <div
               key={item.label}
               className={`collage-cell sa-fade-up sa-d${i + 1}`}
@@ -155,7 +144,6 @@ function Home() {
                   <div className="collage-icon-ring">{item.icon}</div>
                   <p className="collage-title">{item.label}</p>
                   <p className="collage-sub">{item.sub}</p>
-
                 </div>
               </a>
             </div>
@@ -174,7 +162,7 @@ function Home() {
             <img src="/assets/col6.jpg" alt="Ceremony" />
           </div>
           <div className="oval-badge">
-            <span className="num">15+</span>
+            <span className="num">40+</span>
             <span className="txt">YEARS<br />EXCELLENCE</span>
           </div>
         </div>
@@ -183,22 +171,23 @@ function Home() {
           <p className="section-label sa-fade-up">OUR STORY</p>
 
           <h2 className="section-title">
-            <span className="sa-word">A Place Where&nbsp;</span>
-            <em className="sa-word sa-d1">Moments</em>
-            <span className="sa-word sa-d2">&nbsp;Become Memories</span>
+            <span className="sa-word">Where Four Decades of&nbsp;</span>
+            <em className="sa-word sa-d1">Hospitality</em>
+            <span className="sa-word sa-d2">&nbsp;Meet Every Detail</span>
           </h2>
 
           <div className="gold-divider sa-fade-up sa-d2"><span>✦</span></div>
 
           <p className="section-body sa-fade-up sa-d3">
-            Nestled in the heart of Bangalore, Darsana Events is more than a venue — it's a sanctuary
-            where your most cherished celebrations come to life. Our lush gardens, grand ballrooms,
-            and dedicated team of event specialists ensure every detail is handled with the utmost
-            care and elegance.
+            With over four decades of deep-rooted experience in the wedding and catering industry,
+            our founders understand exactly what it takes to pull off a flawless event. Darsana Events
+            isn't just a venue — it is the culmination of 40 years of hospitality expertise, designed
+            from the ground up to handle the grandest Indian weddings down to the finest logistical details.
           </p>
           <p className="section-body sa-fade-up sa-d4" style={{ marginTop: '15px' }}>
-            From intimate weddings to grand gala events, we transform your vision into an unforgettable
-            experience treasured for a lifetime.
+            From lavish wedding receptions and intimate ceremonies to milestone celebrations and corporate
+            gatherings, every event at Darsana Events is handled with the care and precision that only
+            four generations of experience can bring.
           </p>
           <Link
             to="/about"
@@ -217,16 +206,16 @@ function Home() {
       {/* STATS */}
       <div className="stats-row">
         <div className="stat-item sa-fade-up sa-d1">
-          <div className="stat-num"><AnimatedCounter target={2400} suffix="+" delay={0} /></div>
-          <div className="stat-label">EVENTS HOSTED</div>
+          <div className="stat-num"><AnimatedCounter target={40} suffix="+" delay={0} /></div>
+          <div className="stat-label">YEARS OF EXPERTISE</div>
         </div>
         <div className="stat-item sa-fade-up sa-d2">
-          <div className="stat-num"><AnimatedCounter target={50} delay={200} /></div>
-          <div className="stat-label">ACRES OF GARDENS</div>
+          <div className="stat-num"><AnimatedCounter target={4} delay={200} /></div>
+          <div className="stat-label">VERSATILE VENUES</div>
         </div>
         <div className="stat-item sa-fade-up sa-d3">
-          <div className="stat-num"><AnimatedCounter target={15} delay={400} /></div>
-          <div className="stat-label">YEARS OF EXCELLENCE</div>
+          <div className="stat-num"><AnimatedCounter target={4} delay={400} /></div>
+          <div className="stat-label">SERVICE APARTMENTS</div>
         </div>
         <div className="stat-item sa-fade-up sa-d4">
           <div className="stat-num"><AnimatedCounter target={98} suffix="%" delay={600} /></div>
@@ -236,11 +225,11 @@ function Home() {
 
       {/* FEATURED */}
       <section className="featured-section">
-        <div className="featured-text-col"> 
+        <div className="featured-text-col">
           <p className="section-label sa-fade-up">THE DARSANA EVENTS PROMISE</p>
 
           <h2 className="section-title">
-            <span className="sa-word">Luxury in&nbsp;</span>
+            <span className="sa-word">Every Space,&nbsp;</span>
             <em className="sa-word sa-d1">Every</em>
             <span className="sa-word sa-d2">&nbsp;Detail</span>
           </h2>
@@ -248,18 +237,18 @@ function Home() {
           <div className="gold-divider sa-fade-up sa-d2"><span>✦</span></div>
 
           <p className="section-body sa-fade-up sa-d3">
-            We believe extraordinary events are born from meticulous attention to every single detail.
-            Our team of experienced designers, florists, and coordinators work tirelessly to ensure
-            your day surpasses every expectation.
+            Darsana Events offers a thoughtfully curated collection of spaces to suit every kind of
+            celebration — from open-air grandeur to air-conditioned elegance — all backed by 40 years
+            of hospitality expertise and a team that lives and breathes flawless events.
           </p>
 
           <ul className="feat-list sa-fade-up sa-d4">
-            <li>Over 50 acres of lush, manicured garden landscapes</li>
-            <li>Multiple event spaces accommodating 50 to 2,000 guests</li>
-            <li>In-house catering with award-winning culinary team</li>
-            <li>Dedicated event coordinator for every celebration</li>
-            <li>Luxury bridal suite and groom's lounge facilities</li>
-            <li>State-of-the-art lighting, sound &amp; AV systems</li>
+            <li>Open lawn for grand outdoor receptions and ceremonies</li>
+            <li>Intimate air-conditioned mini hall for smaller, elegant gatherings</li>
+            <li>Two semi-covered halls for flexible indoor-outdoor celebrations</li>
+            <li>Four 2BHK service apartments for family and bridal party stays</li>
+            <li>Four distinct event categories — weddings, milestones, birthdays &amp; corporate</li>
+            <li>End-to-end event coordination rooted in four decades of experience</li>
           </ul>
 
           <Link to="/services" className="btn-gold sa-fade-up sa-d5">EXPLORE SERVICES</Link>

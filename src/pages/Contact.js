@@ -99,7 +99,7 @@ ${form.vision}
           </div>
           <div className="c-detail">
             <strong>PHONE &amp; EMAIL</strong>
-            <p>+91 77362 57634<br /><br />events@darsanavillasgarden.in</p>
+            <p>+91 77362 57634<br /><br />darsanashaji@gmail.com</p>
           </div>
           <div className="c-detail">
             <strong>HOURS</strong>

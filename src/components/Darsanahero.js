@@ -267,7 +267,7 @@ export default function DarsanaAboutHero({
                                     />
                                 </svg>
 
-                                <span className="dah-num">15+</span>
+                                <span className="dah-num">40+</span>
 
                                 <span className="dah-lbl">
                                     Years of

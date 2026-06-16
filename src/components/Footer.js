@@ -17,8 +17,8 @@ function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <div className="f-logo">Darsana  <span>Events</span></div>
-            <div className="f-tagline">LUXURY EVENT VENUE · BANGALORE</div>
-            <p>A sanctuary of elegance where love stories unfold, milestones are celebrated, and memories are crafted to last a lifetime. Bangalore's most cherished luxury event destination since 2009.</p>
+            <div className="f-tagline">LUXURY EVENT VENUE · PALAKKAD</div>
+            <p>A sanctuary of elegance where love stories unfold, milestones are celebrated, and memories are crafted to last a lifetime.</p>
             <div className="footer-social">
               <a className="f-social-btn" href="/"> <FaInstagram /> </a>
               <a className="f-social-btn" href="/"> <FaFacebookF /> </a>
@@ -43,13 +43,10 @@ function Footer() {
           <div className="footer-col">
             <h4>SERVICES</h4>
             <ul>
-              <li><a href="/event">Weddings</a></li>
-              <li><a href="/event">Receptions</a></li>
-              <li><a href="/event">Corporate Events</a></li>
-              <li><a href="/event">Garden Soirées</a></li>
-              <li><a href="/event">Private Parties</a></li>
-              <li><a href="/event">Cultural Events</a></li>
-              <li><a href="/event">Gala Dinners</a></li>
+              <li><a href="/event">WEDDING RECEPTION</a></li>
+              <li><a href="/event">INTIMATE WEDDINGS</a></li>
+              <li><a href="/event">CORPORATE EVENTS & SEMINARS</a></li>
+              <li><a href="/event">BIRTHDAYS & MILESTONES</a></li>
             </ul>
           </div>
 
@@ -66,7 +63,7 @@ function Footer() {
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">EMAIL</span>
-              <span className="f-contact-val">events@darsanaeventsgarden.in</span>
+              <span className="f-contact-val">darsanashaji@gmail.com</span>
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">HOURS</span>

@@ -85,12 +85,13 @@ function About() {
         currentPage="ABOUT"
         label="OUR STORY"
         title={`More Than a Venue &ndash;<br /><em>A Legacy</em>`}
-        body={`For over 15 years, Darsana Events has been Bangalore's most beloved luxury event destination, where every celebration is treated as a work of art.`}
+        body={`For over 40 years, Darsana Events has been Palakkad's most beloved luxury event destination, where every celebration is treated as a work of art.`}
         showStats={true}
         image="/assets/white.webp"
       />
 
       {/* STORY SECTION */}
+       {/* STORY SECTION */}
       <div className="about-story">
         <div className="oval-wrap-about sa-fade-left">
           <div className="oval-about-main">
@@ -98,22 +99,25 @@ function About() {
           </div>
         </div>
         <div>
-          <p className="section-label sa-fade-up">FOUNDED IN 2009</p>
+          <p className="section-label sa-fade-up">40 YEARS IN THE MAKING</p>
           <h2 className="section-title">
             <span className="sa-word">Where&nbsp;</span>
-            <em className="sa-word sa-d1">Passion</em>
-            <span className="sa-word sa-d2">&nbsp;Meets Perfection</span>
+            <em className="sa-word sa-d1">Decades of Expertise</em>
+            <span className="sa-word sa-d2">&nbsp;Meet Every Detail</span>
           </h2>
           <div className="gold-divider sa-fade-up sa-d2"><span>✦</span></div>
           <p className="section-body sa-fade-up sa-d3">
-            Darsana Events was founded in 2009 with a single vision: to create a sanctuary where
-            life's most precious celebrations could unfold in surroundings of breathtaking natural
-            beauty and uncompromising luxury.
+            With over four decades of deep-rooted experience in the wedding and catering industry,
+            our founders understand exactly what it takes to pull off a flawless event. Darsana Events
+            isn't just a venue — it is the culmination of 40 years of hospitality expertise, designed
+            from the ground up to handle the grandest Indian weddings down to the finest logistical details.
           </p>
           <p className="section-body sa-fade-up sa-d4" style={{ marginTop: '16px' }}>
-            Over 15 years and 2,400+ events later, we remain committed to that founding vision —
-            constantly evolving, yet always faithful to the principles of elegance, attention to
-            detail, and heartfelt service that have made us Bangalore's most trusted event destination.
+            Our spaces — an open lawn, an intimate air-conditioned hall, two semi-covered halls,
+            and four 2BHK service apartments — are thoughtfully designed so that every guest, every
+            family member, and every moment is cared for under one roof. When you choose Darsana Events,
+            you're not just booking a venue. You're entrusting your celebration to people who have
+            dedicated their lives to making events extraordinary.
           </p>
           <Link
             to="/contact"
@@ -125,26 +129,27 @@ function About() {
         </div>
       </div>
 
+     
       {/* STATS */}
-      <div className="stats-row-about">
-        <div className="stat-item-about sa-fade-up sa-d1">
-          <div className="stat-num-about"><AnimatedCounter target={2400} suffix="+" delay={0} /></div>
-          <div className="stat-label-about">EVENTS HOSTED</div>
+      <div className="stats-row">
+        <div className="stat-item sa-fade-up sa-d1">
+          <div className="stat-num"><AnimatedCounter target={40} suffix="+" delay={0} /></div>
+          <div className="stat-label">YEARS OF EXPERTISE</div>
         </div>
-        <div className="stat-item-about sa-fade-up sa-d2">
-          <div className="stat-num-about"><AnimatedCounter target={50} delay={200} /></div>
-          <div className="stat-label-about">ACRES OF GARDENS</div>
+        <div className="stat-item sa-fade-up sa-d2">
+          <div className="stat-num"><AnimatedCounter target={4} delay={200} /></div>
+          <div className="stat-label">VERSATILE VENUES</div>
         </div>
-        <div className="stat-item-about sa-fade-up sa-d3">
-          <div className="stat-num-about"><AnimatedCounter target={15} delay={400} /></div>
-          <div className="stat-label-about">YEARS OF EXCELLENCE</div>
+        <div className="stat-item sa-fade-up sa-d3">
+          <div className="stat-num"><AnimatedCounter target={4} delay={400} /></div>
+          <div className="stat-label">SERVICE APARTMENTS</div>
         </div>
-        <div className="stat-item-about sa-fade-up sa-d4">
-          <div className="stat-num-about"><AnimatedCounter target={98} suffix="%" delay={600} /></div>
-          <div className="stat-label-about">CLIENT SATISFACTION</div>
+        <div className="stat-item sa-fade-up sa-d4">
+          <div className="stat-num"><AnimatedCounter target={98} suffix="%" delay={600} /></div>
+          <div className="stat-label">CLIENT SATISFACTION</div>
         </div>
       </div>
-
+      
       {/* TEAM */}
       <section className="team-section">
         <p className="section-label sa-fade-up">THE PEOPLE BEHIND THE MAGIC</p>

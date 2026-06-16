@@ -5,40 +5,28 @@ import DarsanaAboutHero from '../components/Darsanahero';
 
 const events = [
   {
-    number: '01 / WEDDING',
-    title: 'WEDDING',
+    number: '01 / WEDDING RECEPTION',
+    title: 'WEDDING RECEPTION',
     img: '/assets/wedding.webp',
-    desc: 'Luxury outdoor wedding venue. Say your vows surrounded by lush gardens, shimmering lights, and the timeless elegance of Brookside — a setting made for forever.',
+    desc: 'Grand celebrations for the newlyweds. Toast to a lifetime of love in our beautifully decorated spaces — where every detail is crafted to make your reception an unforgettable evening.',
   },
   {
-    number: '02 / RECEPTION',
-    title: 'RECEPTION',
+    number: '02 / INTIMATE WEDDINGS',
+    title: 'INTIMATE WEDDINGS',
     img: '/assets/recp.webp',
-    desc: 'Grand reception celebration. Toast to the newlyweds in our opulent ballrooms and manicured gardens, where every detail shines and every memory sparkles.',
+    desc: 'Heartfelt ceremonies for close family and friends. Exchange your vows in an intimate, elegantly arranged setting that feels personal, warm, and truly your own.',
   },
   {
-    number: '03 / BIRTHDAY PARTY',
-    title: 'BIRTHDAY PARTY',
+    number: '03 / BIRTHDAYS & MILESTONES',
+    title: 'BIRTHDAYS & MILESTONES',
     img: '/assets/birthday.webp',
-    desc: "Family and milestone celebrations. Whether it's a sweet sixteen or a golden jubilee, we create magical moments tailored to your vision and your story.",
+    desc: "Celebrate life's most cherished moments. From milestone birthdays to anniversary gatherings, we create joyful occasions tailored to your vision and your story.",
   },
   {
-    number: '04 / HALDI & SANGEET',
-    title: 'HALDI & SANGEET',
-    img: '/assets/Haldi.webp',
-    desc: 'Pre-wedding functions. Begin your bridal journey with joy and colour. Our team honours every ritual with devotion, creating an atmosphere of warmth and festivity.',
-  },
-  {
-    number: '05 / FARMSTAY',
-    title: 'FARMSTAY',
-    img: '/assets/fram.jpg',
-    desc: "Relaxation and getaway experience. Unwind in our tranquil estate, breathe in the open air, and rediscover peace amidst nature's finest settings.",
-  },
-  {
-    number: '06 / CORPORATE',
-    title: 'CORPORATE EVENTS',
-    img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',
-    desc: 'Business meetings and company celebrations. Elevate your corporate experience in sophisticated spaces designed for productivity, networking, and lasting impressions.',
+    number: '04 / CORPORATE EVENTS & SEMINARS',
+    title: 'CORPORATE EVENTS & SEMINARS',
+    img: '/assets/cor.jpg',
+    desc: 'Professional spaces for business excellence. Host meetings, seminars, and company celebrations in sophisticated venues designed for productivity, networking, and lasting impressions.',
   },
 ];
 
