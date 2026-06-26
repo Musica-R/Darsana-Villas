@@ -9,7 +9,7 @@ const Particles = () =>
   ));
 
 const ScrollworkOrnament = () => (
-  
+
   <svg
     className="ornament-top"
     viewBox="0 0 150 22"
@@ -90,7 +90,7 @@ const HeroSection = ({
   secondaryLabel = "EXPLORE VENUES",
   onPrimary,
   onSecondary,
- backgroundImage="/assets/back.png"
+  backgroundImage = "/assets/back.png"
 }) => {
   const heroRef = useRef(null);
 
@@ -102,7 +102,7 @@ const HeroSection = ({
   }, []);
 
   return (
-  <section className="hero" id="hero-section" ref={heroRef}>
+    <section className="hero" id="hero-section" ref={heroRef}>
       {/* Background */}
       <div
         className="hero__bg"

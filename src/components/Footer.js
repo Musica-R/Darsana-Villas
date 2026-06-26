@@ -20,10 +20,17 @@ function Footer() {
             <div className="f-tagline">LUXURY EVENT VENUE · PALAKKAD</div>
             <p>A sanctuary of elegance where love stories unfold, milestones are celebrated, and memories are crafted to last a lifetime.</p>
             <div className="footer-social">
-              <a className="f-social-btn" href="/"> <FaInstagram /> </a>
-              <a className="f-social-btn" href="/"> <FaFacebookF /> </a>
+              <a
+                className="f-social-btn"
+                href="https://www.instagram.com/darsana_wedding?igsh=MXhrb2Z3bmxxN2Znbw=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram />
+              </a>
+              {/* <a className="f-social-btn" href="/"> <FaFacebookF /> </a>
               <a className="f-social-btn" href="/"> <FaYoutube /> </a>
-              <a className="f-social-btn" href="/"> <FaTwitter /> </a>
+              <a className="f-social-btn" href="/"> <FaTwitter /> </a> */}
             </div>
           </div>
 
@@ -67,7 +74,7 @@ function Footer() {
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">HOURS</span>
-              <span className="f-contact-val">Mon–Sat: 10 AM – 7 PM<br />Sun: By Appointment</span>
+              <span className="f-contact-val">Mon–Sat: 10 AM – 6 PM<br />Sun: By Appointment</span>
             </div>
           </div>
         </div>
@@ -77,7 +84,7 @@ function Footer() {
         <div className="footer-bottom">
           <p>© 2025 Darsana Events. All Rights Reserved.</p>
 
-            <a href="https://mpeoples.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", cursor: "pointer"}}><p>Developed by Mpeoples </p></a>
+          <a href="https://mpeoples.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}><p>Developed by Mpeoples </p></a>
 
           <nav>
             {/* <a href="/">Privacy Policy</a>

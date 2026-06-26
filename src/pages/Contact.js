@@ -99,15 +99,15 @@ ${form.vision}
           </div>
           <div className="c-detail">
             <strong>PHONE &amp; EMAIL</strong>
-            <p>+91 77362 57634<br /><br />darsanashaji@gmail.com</p>
+            <p>+91 77362 57634<br />darsanashaji@gmail.com</p>
           </div>
           <div className="c-detail">
             <strong>HOURS</strong>
-            <p>Monday – Saturday: 10:00 AM – 7:00 PM<br />Sunday: By Appointment Only</p>
+            <p>Monday – Saturday: 10:00 AM – 6:00 PM<br />Sunday: By Appointment Only</p>
           </div>
           <div className="c-detail">
             <strong>FOLLOW US</strong>
-            <p>@darsana_events<br />Instagram · Facebook · Pinterest</p>
+            <p>@darsana_wedding<br />Instagram</p>
           </div>
         </div>
 

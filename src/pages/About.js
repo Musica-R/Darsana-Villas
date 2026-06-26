@@ -95,7 +95,7 @@ function About() {
       <div className="about-story">
         <div className="oval-wrap-about sa-fade-left">
           <div className="oval-about-main">
-            <img src="/assets/col6.jpg" alt="Darsana Events" />
+            <img src="/ass/31.jpg" alt="Darsana Events" />
           </div>
         </div>
         <div>

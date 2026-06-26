@@ -113,7 +113,7 @@ function Home() {
   return (
     <div className="home-page hero-page">
 
-      {/* HERO */}
+      {/* HERO bg image */} 
       <HeroSection
         backgroundImage="/assets/back.webp"
         tagline="ELEGANCE • MEMORIES • CELEBRATIONS"
@@ -156,7 +156,7 @@ function Home() {
 
         <div className="oval-wrap sa-fade-left">
           <div className="arch-main">
-            <img src="/assets/Aboutus.jpg" alt="Garden Wedding" />
+            <img src="/ass/36.jpg" alt="Garden Wedding" />
           </div>
           <div className="oval-float">
             <img src="/assets/col6.jpg" alt="Ceremony" />
@@ -256,13 +256,13 @@ function Home() {
 
         <div className="feat-images sa-fade-right">
           <div className="feat-img-top">
-            <img src="/assets/ass.webp" alt="Venue" />
+            <img src="/ass/1a.png" alt="Venue" />
           </div>
           <div className="feat-img-bl">
-            <img src="/assets/people.jpg" alt="Flowers" />
+            <img src="/ass/35.jpg" alt="Flowers" />
           </div>
           <div className="feat-img-br">
-            <img src="/assets/people1.jpg" alt="Couple" />
+            <img src="/ass/27.jpg" alt="Couple" />
           </div>
         </div>
       </section>
@@ -281,19 +281,19 @@ function Home() {
 
         <div className="gallery-grid">
           <div className="gallery-cell sa-fade-up sa-d1">
-            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900&q=80" alt="Wedding" />
+            <img src="/ass/2.jpeg" alt="Wedding" />
           </div>
           <div className="gallery-cell sa-fade-up sa-d2">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80" alt="Ceremony" />
+            <img src="/ass/13.jpeg" alt="Ceremony" />
           </div>
           <div className="gallery-cell sa-fade-up sa-d3">
-            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80" alt="Flowers" />
+            <img src="/ass/11.jpeg" alt="Flowers" />
           </div>
           <div className="gallery-cell sa-fade-up sa-d4">
-            <img src="https://images.unsplash.com/photo-1525772764200-be829a350797?w=600&q=80" alt="Table" />
+            <img src="/ass/26.jpg" alt="Table" />
           </div>
           <div className="gallery-cell sa-fade-up sa-d5">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80" alt="Couple" />
+            <img src="/ass/32.jpg" alt="Couple" />
           </div>
         </div>
 

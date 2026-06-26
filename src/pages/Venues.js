@@ -8,7 +8,7 @@ const venues = [
   {
     tag: 'OPEN AIR CELEBRATION',
     name: 'Open Lawn',
-    img: '/assets/lawn..jpg',
+    img: '/ass/open.jpg',
     desc: 'A sweeping open lawn venue bathed in natural light and open skies — ideal for large traditional ceremonies, outdoor receptions, and grand gatherings that breathe freely under the sun.',
     meta: [
       { icon: <FaUsers />, text: 'LARGE GATHERINGS' },
@@ -26,7 +26,7 @@ const venues = [
   {
     tag: 'INTIMATE & ELEGANT',
     name: 'Mini AC Hall',
-    img: '/assets/ac.jpg',
+    img: '/ass/ac.jpg',
     desc: 'A cosy, fully air-conditioned hall designed for intimate celebrations — offering a refined atmosphere with modern comforts for smaller gatherings and private events.',
     meta: [
       { icon: <FaUsers />, text: 'INTIMATE GATHERINGS' },
@@ -44,7 +44,7 @@ const venues = [
   {
     tag: 'SEMI COVERED CHARM',
     name: 'Semi Covered Hall — I',
-    img: '/assets/semi1.jpg',
+    img: '/ass/semi1.jpg',
     desc: 'A beautifully designed semi-covered space that blends the openness of an outdoor setting with the shelter of an enclosed structure — perfect for medium-scale events with a breezy ambience.',
     meta: [
       { icon: <FaUsers />, text: 'MEDIUM GATHERINGS' },
@@ -62,7 +62,7 @@ const venues = [
   {
     tag: 'SEMI COVERED CHARM',
     name: 'Semi Covered Hall — II',
-    img: '/assets/semi2.jpg',
+    img: '/ass/semi2.jpg',
     desc: 'Our second semi-covered hall offers the same airy, sheltered elegance — providing an additional spacious venue option for simultaneous or standalone celebrations.',
     meta: [
       { icon: <FaUsers />, text: 'MEDIUM GATHERINGS' },
