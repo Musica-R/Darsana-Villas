@@ -5,7 +5,7 @@ import DarsanaAboutHero from '../components/Darsanahero';
 
 const services = [
   {
-    img: '/assets/wedding.webp',
+    img: '/ass/33.jpeg',
     label: 'WEDDINGS & RECEPTIONS',
     title: 'Wedding Reception & Intimate Weddings',
     desc: 'From grand receptions to intimate ceremonies, Darsana Events is designed to host every style of wedding with elegance. With 40 years of hospitality expertise behind every detail, your celebration is in the most experienced hands.',
@@ -19,7 +19,7 @@ const services = [
     reverse: false,
   },
   {
-    img: '/assets/birthday.webp',
+    img: '/ass/28.jpg',
     label: 'CELEBRATIONS & MILESTONES',
     title: 'Birthdays & Family Milestones',
     desc: 'Mark life\'s most cherished moments in a setting that feels truly special. Whether it\'s a milestone birthday, an anniversary, or a family gathering, our venues and team ensure every occasion is celebrated in warmth and style.',

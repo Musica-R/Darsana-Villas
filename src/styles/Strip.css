@@ -1,0 +1,200 @@
+/* ══════════════════════════════════════════
+   PHOTO STRIP  —  ps- namespace
+   ══════════════════════════════════════════ */
+
+.ps-section {
+  width: 100%;
+  /* padding: 4.5rem 0 3.5rem; */
+  background: var(--cream);
+  overflow: hidden;
+}
+
+/* ── Header ────────────────────────────── */
+.ps-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 4rem 2rem;
+}
+
+.ps-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ps-eyebrow {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+}
+
+.ps-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.2;
+}
+
+/* ── Nav buttons ────────────────────────── */
+.ps-nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ps-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: transparent;
+  color: var(--gold-dark);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+.ps-btn:hover:not(:disabled) {
+  background: var(--gold);
+  color: var(--white);
+}
+.ps-btn:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+/* ── Track ─────────────────────────────── */
+.ps-track-outer {
+  padding: 0 4rem;
+  overflow: hidden;
+}
+
+.ps-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+.ps-track::-webkit-scrollbar { display: none; }
+.ps-track:active { cursor: grabbing; }
+
+/* ── Cards ─────────────────────────────── */
+/* 5 cards visible: (100% − 4×16px gap) / 5 */
+.ps-card {
+  flex: 0 0 calc((100% - 4 * 16px) / 5);
+  aspect-ratio: 3 / 4;            /* portrait — looks great for venue/event photos */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: var(--pink-mid);
+  box-shadow: 0 3px 16px rgba(122, 79, 46, 0.11);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ps-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(122, 79, 46, 0.2);
+}
+
+.ps-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  transition: transform 0.45s ease;
+}
+.ps-card:hover img {
+  transform: scale(1.05);
+}
+
+.ps-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 14, 6, 0.72) 0%,
+    rgba(26, 14, 6, 0.08) 40%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.ps-label {
+  position: absolute;
+  bottom: 16px;
+  left: 18px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* ── Dots ──────────────────────────────── */
+.ps-dots {
+  display: flex;
+  gap: 7px;
+  padding: 1.75rem 4rem 0;
+}
+
+.ps-dot {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  border: none;
+  padding: 0;
+  background: var(--gold-pale);
+  cursor: pointer;
+  transition: background 0.25s, width 0.25s;
+}
+.ps-dot.active {
+  background: var(--gold);
+  width: 40px;
+}
+
+/* ── Responsive ────────────────────────── */
+@media (max-width: 1200px) {
+  .ps-card {
+    flex: 0 0 calc((100% - 3 * 16px) / 4);
+  }
+}
+
+@media (max-width: 900px) {
+  .ps-header,
+  .ps-track-outer,
+  .ps-dots {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .ps-card {
+    flex: 0 0 calc((100% - 2 * 16px) / 3);
+  }
+}
+
+@media (max-width: 600px) {
+  .ps-section { padding: 3rem 0 2.5rem; }
+  .ps-header { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding-bottom: 1.5rem; }
+  .ps-card {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+@media (max-width: 420px) {
+  .ps-card { flex: 0 0 72vw; }
+}

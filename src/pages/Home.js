@@ -7,25 +7,26 @@ import { GiBigDiamondRing, GiFlowerPot, GiPartyPopper } from 'react-icons/gi';
 import { MdCorporateFare } from 'react-icons/md';
 import TestimonialSection from '../components/Testimonialsection';
 import { useEffect, useRef, useState } from "react";
+import PhotoStrip from '../components/StripSection';
 // import VideoSection from '../components/Videosection';
 
 const COLLAGE_ITEMS = [
   {
-    img: '/assets/col1.jpg',
+    img: '/ass/2.jpeg',
     alt: 'wedding reception',
     icon: <GiBigDiamondRing />,
     label: 'WEDDING RECEPTION',
     sub: 'Grand celebrations, timeless elegance',
   },
   {
-    img: '/assets/col2.jpg',
+    img: '/ass/30.jpg',
     alt: 'intimate wedding',
     icon: <GiFlowerPot />,
     label: 'INTIMATE WEDDINGS',
     sub: 'Close hearts, cherished moments',
   },
   {
-    img: '/assets/birthday.webp',
+    img: '/ass/26.jpg',
     alt: 'family milestones',
     icon: <GiPartyPopper />,
     label: 'BIRTHDAYS & MILESTONES',
@@ -113,7 +114,7 @@ function Home() {
   return (
     <div className="home-page hero-page">
 
-      {/* HERO bg image */} 
+      {/* HERO bg image */}
       <HeroSection
         backgroundImage="/assets/back.webp"
         tagline="ELEGANCE • MEMORIES • CELEBRATIONS"
@@ -156,7 +157,7 @@ function Home() {
 
         <div className="oval-wrap sa-fade-left">
           <div className="arch-main">
-            <img src="/ass/36.jpg" alt="Garden Wedding" />
+            <img src="/ass/23.jpeg" alt="Garden Wedding" />
           </div>
           <div className="oval-float">
             <img src="/assets/col6.jpg" alt="Ceremony" />
@@ -290,7 +291,7 @@ function Home() {
             <img src="/ass/11.jpeg" alt="Flowers" />
           </div>
           <div className="gallery-cell sa-fade-up sa-d4">
-            <img src="/ass/26.jpg" alt="Table" />
+            <img src="/ass/30.jpeg" alt="Table" />
           </div>
           <div className="gallery-cell sa-fade-up sa-d5">
             <img src="/ass/32.jpg" alt="Couple" />
@@ -298,7 +299,14 @@ function Home() {
         </div>
 
         <Link to="/gallery" className="btn-outline sa-fade-up sa-d6">VIEW FULL GALLERY</Link>
+
       </section>
+
+      {/* VIDEO SECTION */}
+
+     <PhotoStrip />
+
+
 
       {/* WOW SECTION */}
       <section className="wow-section-wrapper">
@@ -310,6 +318,7 @@ function Home() {
             <div className="wow-overlay" />
             <div className="wow-circle">
               <img src="/assets/wow3.jpg" alt="Decor" />
+
             </div>
             <div className="wow-floater wow-floater-1">
               <span>Est. 2014</span>

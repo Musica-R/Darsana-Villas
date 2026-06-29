@@ -1,3 +1,255 @@
+/* ================================================================
+   GALLERY PAGE
+   ================================================================ */
+
+
+/* ── Curved Film Strip Section ─────────────────────────────────── */
+
+.strip-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+  min-height: 620px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 60px;
+  gap: 0;
+  overflow: hidden;
+}
+
+.strip-label {
+  padding-right: 40px;
+  z-index: 2;
+}
+
+.strip-eyebrow {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.strip-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.strip-heading em {
+  font-style: italic;
+  color: var(--coffee);
+}
+
+.strip-body {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 240px;
+}
+
+/* The arc container — this is the KEY element.
+   It's an oversized circle pushed off-screen to the right,
+   so only its left curved edge is visible — forming the arc shape. */
+.strip-right {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+}
+
+.strip-arc {
+  position: absolute;
+  /* A very large circle: radius ~600px, centred far right */
+  right: -320px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* Soft shadow to give depth like the reference */
+  box-shadow: -8px 0 40px rgba(26, 14, 6, 0.12);
+}
+
+/* Each photo panel sits inside the arc circle.
+   They divide the circle into horizontal slices (top, upper-mid, center, lower) */
+.strip-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+/* Slice heights & positions — 4 images stacked with thin white gaps */
+.strip-panel:nth-child(1) { top: 0;    height: 170px; }
+.strip-panel:nth-child(2) { top: 174px; height: 180px; }
+.strip-panel:nth-child(3) { top: 358px; height: 188px; }
+.strip-panel:nth-child(4) { top: 550px; height: 150px; }
+
+.strip-panel-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.strip-panel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  /* Black & white like the reference */
+  filter: grayscale(100%) contrast(1.08) brightness(0.96);
+  display: block;
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+/* Thin white divider lines between panels (gap effect) */
+.strip-panel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--cream);
+  z-index: 2;
+}
+
+.strip-panel:last-child::after {
+  display: none;
+}
+
+/* Colour reveal on section hover */
+.strip-section:hover .strip-panel-inner img {
+  filter: grayscale(30%) contrast(1.04) brightness(0.98);
+}
+
+.strip-panel:hover .strip-panel-inner img {
+  filter: grayscale(0%) contrast(1) brightness(1);
+  transform: scale(1.04);
+}
+
+/* Decorative thin gold ring inside the arc — bottom-right quarter visible */
+.strip-arc::after {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+/* ── Video Section ─────────────────────────────────────────────── */
+
+.gallery-videos {
+  background: var(--ivory);
+  padding: 80px 60px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gallery-videos__heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  margin: 10px 0 16px;
+}
+
+.gallery-videos__heading em {
+  font-style: italic;
+  color: var(--coffee);
+}
+
+.gallery-videos__sub {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  max-width: 520px;
+  margin: 0 auto 52px;
+  line-height: 1.7;
+}
+
+.gallery-videos__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.gallery-video-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gallery-video-wrap {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.gallery-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 14, 6, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-play-btn {
+  width: 64px;
+  height: 64px;
+  background: transparent;
+  border: none;
+  color: var(--gold-light);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding: 0;
+}
+
+.gallery-play-btn:hover {
+  transform: scale(1.12);
+  color: var(--gold);
+}
+
+.gallery-play-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-video-caption {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+
+/* ── Filter Bar ────────────────────────────────────────────────── */
+
 .gallery-filter {
   display: flex;
   gap: 4px;
@@ -24,6 +276,9 @@
   color: var(--gold-light);
   border-color: var(--coffee);
 }
+
+
+/* ── Masonry Grid ──────────────────────────────────────────────── */
 
 .gallery-masonry {
   columns: 3;
@@ -56,16 +311,35 @@
    ================================================================ */
 @media (max-width: 1024px) {
 
+  .strip-section {
+    grid-template-columns: 240px 1fr;
+    padding: 0 40px;
+    min-height: 540px;
+    margin-bottom: 60px;
+  }
+
+  .strip-right {
+    height: 540px;
+  }
+
+  .strip-arc {
+    width: 600px;
+    height: 600px;
+    right: -270px;
+  }
+
+  .strip-panel:nth-child(1) { top: 0;    height: 146px; }
+  .strip-panel:nth-child(2) { top: 150px; height: 154px; }
+  .strip-panel:nth-child(3) { top: 308px; height: 162px; }
+  .strip-panel:nth-child(4) { top: 474px; height: 126px; }
+
+  .gallery-videos {
+    padding: 60px 40px;
+  }
+
   .gallery-filter {
     padding: 0 40px;
     margin: 42px 0 34px;
-    gap: 8px;
-  }
-
-  .filter-btn {
-    padding: 10px 20px;
-    font-size: 9px;
-    letter-spacing: 1.8px;
   }
 
   .gallery-masonry {
@@ -86,10 +360,54 @@
    ================================================================ */
 @media (max-width: 768px) {
 
+  .strip-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 0 24px;
+    min-height: auto;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .strip-label {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .strip-body {
+    max-width: 100%;
+  }
+
+  .strip-right {
+    height: 420px;
+    width: 100%;
+  }
+
+  .strip-arc {
+    width: 500px;
+    height: 500px;
+    right: -200px;
+    left: auto;
+  }
+
+  .strip-panel:nth-child(1) { top: 0;    height: 118px; }
+  .strip-panel:nth-child(2) { top: 122px; height: 126px; }
+  .strip-panel:nth-child(3) { top: 252px; height: 130px; }
+  .strip-panel:nth-child(4) { top: 386px; height: 110px; }
+
+  .gallery-videos {
+    padding: 50px 24px;
+  }
+
+  .gallery-videos__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
   .gallery-filter {
     margin: 36px 0 30px;
     padding: 0 24px;
-    gap: 10px;
+    gap: 8px;
   }
 
   .filter-btn {
@@ -116,6 +434,31 @@
    ================================================================ */
 @media (max-width: 420px) {
 
+  .strip-section {
+    padding: 0 18px;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .strip-right {
+    height: 340px;
+  }
+
+  .strip-arc {
+    width: 400px;
+    height: 400px;
+    right: -160px;
+  }
+
+  .strip-panel:nth-child(1) { top: 0;    height: 94px; }
+  .strip-panel:nth-child(2) { top: 98px; height: 100px; }
+  .strip-panel:nth-child(3) { top: 202px; height: 104px; }
+  .strip-panel:nth-child(4) { top: 310px; height: 90px; }
+
+  .gallery-videos {
+    padding: 40px 18px;
+  }
+
   .gallery-filter {
     margin: 28px 0 24px;
     padding: 0 18px;
@@ -127,25 +470,15 @@
     padding: 8px 14px;
     font-size: 7px;
     letter-spacing: 1.2px;
-    line-height: 1.4;
   }
 
   .gallery-masonry {
     columns: 1;
-    column-gap: 0;
     padding: 0 18px;
     margin: 0 auto 50px;
   }
 
   .gallery-item {
     margin-bottom: 10px;
-  }
-
-  .gallery-item img {
-    transition: transform .45s;
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.02);
   }
 }
