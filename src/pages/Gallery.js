@@ -49,8 +49,8 @@ function Gallery() {
         </p>
         <div className="gallery-videos__grid">
           {[
-            { src: '/ass/video1.mp4', poster: '/ass/34.jpg', caption: 'Wedding Highlights — 2024' },
-            { src: '/ass/video2.mp4', poster: '/ass/26.jpg', caption: 'Reception Moments — 2024' },
+            { src: '/ass/video1.mp4', poster: '/ass/29.jpeg', caption: 'Wedding Highlights' },
+            { src: '/ass/video2.mp4', poster: '/ass/22.png', caption: 'Reception Moments' },
           ].map((v, i) => (
             <div className="gallery-video-card" key={i}>
               <div className="gallery-video-wrap">
