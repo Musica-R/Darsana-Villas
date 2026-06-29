@@ -658,6 +658,10 @@
 /* -------------------- 420px -------------------- */
 @media (max-width: 420px) {
 
+  .desc-row{
+    text-shadow: none;
+  }
+
   .hero {
     min-height: 780px;
     padding: 100px 18px 70px;
@@ -692,7 +696,7 @@
   }
 
   .tagline-text {
-    font-size: 8px;
+    font-size: 9.5px;
     letter-spacing: 0.18em;
     text-align: center;
   }

@@ -84,7 +84,10 @@ function Footer() {
         <div className="footer-bottom">
           <p>© 2025 Darsana Events. All Rights Reserved.</p>
 
-          <a href="https://mpeoples.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}><p>Developed by Mpeoples </p></a>
+          <div className="footer-credit-container">
+            <img src="/ass/mp.jpg" alt="Mpeoples Logo" />
+            <a href="https://mpeoples.in/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}><p>Developed by Mpeoples </p></a>
+          </div>
 
           <nav>
             {/* <a href="/">Privacy Policy</a>

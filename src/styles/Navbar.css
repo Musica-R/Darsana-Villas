@@ -126,7 +126,7 @@
 .nav-logo span {
   font-style: italic;
   font-weight: 300;
-  color: var(--gold-light);
+  /* color: var(--gold-light); */
   transition: color 0.5s ease;
 }
 
@@ -157,7 +157,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: white;
+  /* color: white; */
   z-index: 1100;
   padding: 6px;
   line-height: 1;
