@@ -19,7 +19,7 @@ const COLLAGE_ITEMS = [
     sub: 'Grand celebrations, timeless elegance',
   },
   {
-    img: '/ass/30.jpg',
+    img: '/ass/32.jpeg',
     alt: 'intimate wedding',
     icon: <GiFlowerPot />,
     label: 'INTIMATE WEDDINGS',
