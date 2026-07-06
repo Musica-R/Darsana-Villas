@@ -70,7 +70,9 @@ function Footer() {
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">EMAIL</span>
-              <span className="f-contact-val">darsanashaji@gmail.com</span>
+              <a href="mailto:darsanashaji@gmail.com" className="f-contact-val">
+                darsanashaji@gmail.com
+              </a>
             </div>
             <div className="f-contact-item">
               <span className="f-contact-label">HOURS</span>
@@ -92,7 +94,9 @@ function Footer() {
           <nav>
             {/* <a href="/">Privacy Policy</a>
             <a href="/">Terms of Use</a> */}
-            <a href="/contact">Sitemap</a>
+            {/* <a href="https://maps.app.goo.gl/92Xwgj15N2yNrXMU8"
+              target="_blank"
+              rel="noopener noreferrer">Sitemap</a> */}
           </nav>
         </div>
       </footer>

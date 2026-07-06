@@ -54,7 +54,7 @@
 }
 
 .stay-room-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255, 255, 255, .72);
   line-height: 1.7;
   font-weight: 300;
@@ -120,7 +120,7 @@
 }
 
 .amenity-desc {
-  font-size: 11.5px;
+  font-size: 14px;
   color: rgba(255, 255, 255, .55);
   line-height: 1.6;
   font-weight: 300;

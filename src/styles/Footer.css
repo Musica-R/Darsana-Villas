@@ -197,6 +197,15 @@
 }
 
 
+.f-contact-val {
+  color: inherit;
+  text-decoration: none;
+}
+
+.f-contact-val:hover {
+  text-decoration: underline;
+}
+
 
 /* ================================================================
    RESPONSIVE — 1024px

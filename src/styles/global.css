@@ -65,7 +65,7 @@ body {
 
 /* SHARED TYPE UTILITIES */
 .section-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 5px;
   color: var(--gold-dark);
   text-transform: uppercase;
@@ -86,7 +86,7 @@ body {
 }
 
 .section-body {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.9;
   color: var(--text-mid);
   font-weight: 400;
@@ -347,6 +347,10 @@ body {
   transform: translateY(-4px);
 }
 
+/* p{
+  font-size: 20px !important;
+} */
+
 /* ================================================================
    GLOBAL RESPONSIVE — 1024px
    ================================================================ */
@@ -493,19 +497,19 @@ body {
   }
 
   .section-label {
-    font-size: 7px;
+    font-size: 10px;
     letter-spacing: 2.5px;
     margin-bottom: 8px;
   }
 
   .section-title {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.12;
     letter-spacing: -0.3px;
   }
 
   .section-body {
-    font-size: 12px;
+    font-size: 13.5px;
     line-height: 1.8;
   }
 

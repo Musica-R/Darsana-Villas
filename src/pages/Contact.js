@@ -3,15 +3,82 @@ import '../styles/Contact.css';
 
 function Contact() {
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', eventType: '', date: '', guests: '', vision: '' });
+  const [errors, setErrors] = useState({ firstName: '', lastName: '', email: '', phone: '', date: '' });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => { window.scrollTo({ top: 0 }); }, []);
 
-  const handleChange = e => setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  // ── VALIDATION HELPERS ──
+  const nameRegex = /^[A-Za-z\s]*$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const validateField = (name, value) => {
+    switch (name) {
+      case 'firstName':
+      case 'lastName':
+        if (value && !nameRegex.test(value)) {
+          return 'Only alphabetic characters are allowed.';
+        }
+        return '';
+
+      case 'email':
+        if (value && !emailRegex.test(value)) {
+          return 'Please enter a valid email address.';
+        }
+        return '';
+
+      case 'phone': {
+        const digitsOnly = value.replace(/\D/g, '');
+        if (value && digitsOnly.length !== 10) {
+          return 'Invalid phone number.';
+        }
+        return '';
+      }
+
+      case 'date': {
+        if (value) {
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          const selectedDate = new Date(value);
+          selectedDate.setHours(0, 0, 0, 0);
+          if (selectedDate < today) {
+            return 'Please select the current date or a future date.';
+          }
+        }
+        return '';
+      }
+
+      default:
+        return '';
+    }
+  };
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    let sanitizedValue = value;
+
+    // Prevent typing numbers/special characters into name fields
+    if (name === 'firstName' || name === 'lastName') {
+      sanitizedValue = value.replace(/[^A-Za-z\s]/g, '');
+    }
+
+    // Restrict phone field to digits only, max 10
+    if (name === 'phone') {
+      sanitizedValue = value.replace(/\D/g, '').slice(0, 10);
+    }
+
+    setForm(prev => ({ ...prev, [name]: sanitizedValue }));
+    setErrors(prev => ({ ...prev, [name]: validateField(name, sanitizedValue) }));
+  };
+
+  const handleBlur = e => {
+    const { name, value } = e.target;
+    setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
+  };
 
   const handleSubmit = () => {
 
-    // VALIDATION
+    // VALIDATION - required fields
 
     if (
       !form.firstName ||
@@ -26,6 +93,23 @@ function Contact() {
 
       alert("Please fill all fields before submitting.");
 
+      return;
+    }
+
+    // VALIDATION - field-level rules
+
+    const newErrors = {
+      firstName: validateField('firstName', form.firstName),
+      lastName: validateField('lastName', form.lastName),
+      email: validateField('email', form.email),
+      phone: validateField('phone', form.phone),
+      date: validateField('date', form.date),
+    };
+
+    setErrors(newErrors);
+
+    const hasErrors = Object.values(newErrors).some(err => err !== '');
+    if (hasErrors) {
       return;
     }
 
@@ -71,6 +155,8 @@ ${form.vision}
       vision: ''
     });
 
+    setErrors({ firstName: '', lastName: '', email: '', phone: '', date: '' });
+
     // SUCCESS MESSAGE
 
     setSubmitted(true);
@@ -80,6 +166,9 @@ ${form.vision}
     }, 4000);
 
   };
+
+  // today's date for the min attribute on the date input
+  const todayStr = new Date().toISOString().split('T')[0];
 
   return (
     <div className="contact-page">
@@ -117,20 +206,53 @@ ${form.vision}
           <div className="form-row">
             <div className="form-group">
               <label>FIRST NAME</label>
-              <input type="text" name="firstName" value={form.firstName} onChange={handleChange} placeholder="Your first name" />
+              <input
+                type="text"
+                name="firstName"
+                value={form.firstName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                placeholder="Your first name"
+              />
+              {errors.firstName && <span className="field-error">{errors.firstName}</span>}
             </div>
             <div className="form-group">
               <label>LAST NAME</label>
-              <input type="text" name="lastName" value={form.lastName} onChange={handleChange} placeholder="Your last name" />
+              <input
+                type="text"
+                name="lastName"
+                value={form.lastName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                placeholder="Your last name"
+              />
+              {errors.lastName && <span className="field-error">{errors.lastName}</span>}
             </div>
           </div>
           <div className="form-group">
             <label>EMAIL ADDRESS</label>
-            <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" />
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="your@email.com"
+            />
+            {errors.email && <span className="field-error">{errors.email}</span>}
           </div>
           <div className="form-group">
             <label>PHONE NUMBER</label>
-            <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+91 XXXXX XXXXX" />
+            <input
+              type="tel"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="10-digit mobile number"
+              maxLength={10}
+            />
+            {errors.phone && <span className="field-error">{errors.phone}</span>}
           </div>
           <div className="form-row">
             <div className="form-group">
@@ -148,7 +270,15 @@ ${form.vision}
             </div>
             <div className="form-group">
               <label>PREFERRED DATE</label>
-              <input type="date" name="date" value={form.date} onChange={handleChange} />
+              <input
+                type="date"
+                name="date"
+                value={form.date}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                min={todayStr}
+              />
+              {errors.date && <span className="field-error">{errors.date}</span>}
             </div>
           </div>
           <div className="form-group">
