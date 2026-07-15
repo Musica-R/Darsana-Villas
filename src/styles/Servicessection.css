@@ -46,7 +46,7 @@
    Section header — eyebrow
    ---------------------------------------------------------- */
 .venue__services-eyebrow {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 5px;
     color: #B8922A;
     margin-bottom: 16px;
@@ -256,7 +256,7 @@
 }
 
 .venue__card-desc {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.9;
     color: #5C4020;
     font-weight: 300;
@@ -414,7 +414,7 @@
   }
 
   .venue__services-eyebrow {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 4px;
   }
 
@@ -433,11 +433,11 @@
   }
 
   .venue__card-title {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .venue__card-desc {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.65;
   }
 

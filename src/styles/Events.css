@@ -71,7 +71,7 @@
   background: var(--cream);
   padding: 0 12px;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .events-grid {
@@ -156,7 +156,7 @@
 }
 
 .event-card-num {
-  font-size: 13px;
+  font-size: 16px;
   font-style: italic;
   color: var(--gold-light);
   letter-spacing: 1px;
@@ -171,7 +171,7 @@
 }
 
 .event-card-title {
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 3.5px;
   color: var(--text-dark);
 }
@@ -193,7 +193,7 @@
 }
 
 .event-card-desc {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85;
   color: var(--text-mid);
   font-weight: 300;
@@ -202,7 +202,7 @@
 
 .event-card-cta {
   margin-top: 14px;
-  font-size: 9.5px;
+  font-size: 16px;
   letter-spacing: 2.5px;
   color: var(--gold-dark);
   display: flex;
@@ -248,7 +248,7 @@
 .events-cta-band p {
   color: rgba(255, 255, 255, .65);
   font-weight: 300;
-  font-size: 15px;
+  font-size: 16px;
   margin: 16px 0 32px;
   position: relative;
   z-index: 1;
@@ -367,7 +367,7 @@
   }
 
   .event-card-title {
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: 3px;
   }
 
@@ -399,7 +399,7 @@
   }
 
   .events-hero-content .section-body {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
   }
 
@@ -431,18 +431,18 @@
   }
 
   .event-card-title {
-    font-size: 10px;
+    font-size: 16px;
     letter-spacing: 2.5px;
     line-height: 1.7;
   }
 
   .event-card-desc {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.8;
   }
 
   .event-card-cta {
-    font-size: 8.5px;
+    font-size: 16px;
     letter-spacing: 2px;
   }
 
@@ -451,7 +451,7 @@
   }
 
   .events-cta-band p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
   }
 }
@@ -476,7 +476,7 @@
   }
 
   .events-hero-content .section-body {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.8;
     margin-top: 14px;
   }
@@ -491,7 +491,7 @@
   }
 
   .gold-divider span {
-    font-size: 10px;
+    font-size: 16px;
     top: -10px;
     padding: 0 8px;
   }
@@ -515,7 +515,7 @@
   }
 
   .event-card-num {
-    font-size: 11px;
+    font-size: 16px;
   }
 
   .event-card-body {
@@ -524,7 +524,7 @@
   }
 
   .event-card-title {
-    font-size: 9px;
+    font-size: 16px;
     letter-spacing: 2px;
     line-height: 1.6;
   }
@@ -538,13 +538,13 @@
   }
 
   .event-card-desc {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.75;
   }
 
   .event-card-cta {
     margin-top: 10px;
-    font-size: 7px;
+    font-size: 16px;
     letter-spacing: 1.7px;
     gap: 6px;
   }
@@ -558,9 +558,13 @@
   }
 
   .events-cta-band p {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.8;
     margin: 14px 0 24px;
+  }
+
+  .sa-fade-up{
+    font-size: 16px;
   }
 
   .sa-fade-up,

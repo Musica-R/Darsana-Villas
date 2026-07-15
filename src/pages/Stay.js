@@ -76,7 +76,6 @@ function Stay() {
             <div className="stay-room-info">
               <p className="stay-room-tag">{r.tag}</p>
               <h3 className="stay-room-name">{r.name}</h3>
-              <p className="stay-room-desc">{r.desc}</p>
               <span className="stay-room-meta">{r.meta}</span>
             </div>
           </div>

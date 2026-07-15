@@ -9,7 +9,6 @@ const Particles = () =>
   ));
 
 const ScrollworkOrnament = () => (
-
   <svg
     className="ornament-top"
     viewBox="0 0 150 22"
@@ -20,7 +19,6 @@ const ScrollworkOrnament = () => (
   >
     <line x1="0" y1="11" x2="42" y2="11" stroke="#ffd258" strokeWidth="0.85" />
     <circle cx="47" cy="11" r="1.7" fill="#ffd560" />
-    {/* left S-scroll */}
     <path
       d="M53 11 C55 7,59 6,61 9 C63 12,61 16,58 15 C55 14,55 10,58 9"
       fill="none"
@@ -29,9 +27,7 @@ const ScrollworkOrnament = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    {/* center diamond */}
     <path d="M71 11 L75 7 L79 11 L75 15 Z" fill="#ffd258" />
-    {/* right S-scroll (mirror) */}
     <path
       d="M92 9 C95 10,95 14,92 15 C89 16,87 12,89 9 C91 6,95 7,97 11"
       fill="none"
@@ -81,13 +77,36 @@ const LeafSprigRight = () => (
   </svg>
 );
 
+const ArrowIcon = () => (
+  <svg
+    className="btn-arrow"
+    viewBox="0 0 24 24"
+    width="13"
+    height="13"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M4 12h15M13 6l6 6-6 6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 const HeroSection = ({
-  tagline = "ELEGANCE \u2022 MEMORIES \u2022 CELEBRATIONS",
-  description = "Extraordinary celebrations in breathtaking settings",
-  primaryLabel = "BEGIN YOUR JOURNEY",
-  secondaryLabel = "EXPLORE VENUES",
+  tagline = "PREMIUM WEDDINGS • RECEPTIONS • GRAND CELEBRATIONS",
+  headlineLine1 = "Where",
+  headlineScript = "Dream Weddings",
+  headlineLine3 = "Come Alive",
+  description = "Host unforgettable weddings, receptions and celebrations\nin elegant venues crafted for timeless memories.",
+  primaryLabel = "EXPLORE VENUES",
+  secondaryLabel = "BOOK YOUR EVENT",
   onPrimary,
   onSecondary,
   backgroundImage = "/assets/back.png"
@@ -132,13 +151,11 @@ const HeroSection = ({
         {/* Top scrollwork ornament */}
         <ScrollworkOrnament />
 
-        {/* Headline */}
+        {/* Headline — three stacked lines: white / gold script / white */}
         <div className="headline-block">
-          <div className="row1">
-            <span className="txt-where">Where</span>
-            <span className="txt-love">Love</span>
-          </div>
-          <span className="txt-blooms">Blooms</span>
+          <span className="txt-line1">{headlineLine1}</span>
+          <span className="txt-script">{headlineScript}</span>
+          <span className="txt-line3">{headlineLine3}</span>
         </div>
 
         {/* Short divider */}
@@ -154,10 +171,10 @@ const HeroSection = ({
         {/* CTAs */}
         <div className="ctas">
           <button className="btn btn-primary" onClick={onPrimary}>
-            {primaryLabel}
+            {primaryLabel} <ArrowIcon />
           </button>
           <button className="btn btn-secondary" onClick={onSecondary}>
-            {secondaryLabel}
+            {secondaryLabel} <ArrowIcon />
           </button>
         </div>
 

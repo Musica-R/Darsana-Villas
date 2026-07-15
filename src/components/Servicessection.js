@@ -13,19 +13,19 @@ const ICONS = {
 
 const services = [
     {
-        img: "/assets/wed.jpg",
+        img: "/ass/ev/D10.png",
         icon: "wedding_reception",
         title: "WEDDING RECEPTION",
         desc: "From the first decoration to the final farewell, we orchestrate grand receptions with the elegance and precision that only 40 years of experience can deliver.",
     },
     {
-        img: "/assets/rec.jpg",
+        img: "/ass/32.jpeg",
         icon: "intimate_wedding",
         title: "INTIMATE WEDDINGS",
         desc: "Small in size, immense in feeling — our intimate wedding setups create deeply personal ceremonies wrapped in warmth and timeless beauty.",
     },
     {
-        img: "/assets/party.jpg",
+        img: "/ass/ev/D16.webp",
         icon: "milestones",
         title: "BIRTHDAYS & MILESTONES",
         desc: "Whether it's a first birthday or a golden jubilee, we transform every family milestone into a celebration that will be cherished for generations.",

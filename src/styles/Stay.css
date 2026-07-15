@@ -39,7 +39,7 @@
 }
 
 .stay-room-tag {
-  font-size: 8.5px;
+  font-size: 11px;
   letter-spacing: 4px;
   color: var(--gold-light);
   margin-bottom: 8px;
@@ -71,7 +71,7 @@
 }
 
 .stay-room-meta {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2px;
   color: var(--gold-light);
 }
@@ -113,7 +113,7 @@
 }
 
 .amenity-name {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2.5px;
   color: var(--gold-light);
   margin-bottom: 6px;
@@ -157,8 +157,21 @@
     padding: 26px 20px;
   }
 
+  .stay-room-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
   .stay-room-name {
     font-size: 22px;
+  }
+
+  .stay-room-desc {
+    font-size: 13px;
+  }
+
+  .stay-room-meta {
+    font-size: 10px;
   }
 
   .amenities-strip {
@@ -172,6 +185,14 @@
   .amenity-item {
     padding: 24px 10px;
   }
+
+  .amenity-name {
+    font-size: 10px;
+  }
+
+  .amenity-desc {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -183,11 +204,28 @@
     height: 320px;
   }
 
+  .stay-room-tag {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
   .stay-room-name {
     font-size: 20px;
   }
 
   .stay-room-desc {
+    font-size: 12px;
+  }
+
+  .stay-room-meta {
+    font-size: 9px;
+  }
+
+  .amenity-name {
+    font-size: 9px;
+  }
+
+  .amenity-desc {
     font-size: 12px;
   }
 

@@ -7,19 +7,19 @@ const events = [
   {
     number: '01 / WEDDING RECEPTION',
     title: 'WEDDING RECEPTION',
-    img: '/assets/wedding.webp',
+    img: '/ass/30.jpg',
     desc: 'Grand celebrations for the newlyweds. Toast to a lifetime of love in our beautifully decorated spaces — where every detail is crafted to make your reception an unforgettable evening.',
   },
   {
     number: '02 / INTIMATE WEDDINGS',
     title: 'INTIMATE WEDDINGS',
-    img: '/assets/recp.webp',
+    img: '/ass/23.jpeg',
     desc: 'Heartfelt ceremonies for close family and friends. Exchange your vows in an intimate, elegantly arranged setting that feels personal, warm, and truly your own.',
   },
   {
     number: '03 / BIRTHDAYS & MILESTONES',
     title: 'BIRTHDAYS & MILESTONES',
-    img: '/assets/birthday.webp',
+    img: '/ass/32.jpg',
     desc: "Celebrate life's most cherished moments. From milestone birthdays to anniversary gatherings, we create joyful occasions tailored to your vision and your story.",
   },
   {

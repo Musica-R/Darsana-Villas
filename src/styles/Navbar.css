@@ -199,7 +199,7 @@
   }
 
   .nav-logo small {
-    font-size: 8px;
+    font-size: 9.5px;
     letter-spacing: 4px;
   }
 
@@ -208,5 +208,8 @@
     display: block;
     width: 36px;
     height: 36px;
+  }
+  .navbar{
+    height: 50px;
   }
 }

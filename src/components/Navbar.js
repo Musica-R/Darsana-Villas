@@ -32,7 +32,7 @@ function Navbar() {
           <div className="nav-links desktop-only">
             <NavLink to="/" end>HOME</NavLink>
             <NavLink to="/about">ABOUT</NavLink>
-            <NavLink to="/venues">VENUES</NavLink>
+            <NavLink to="/venues">SPACES</NavLink>
             <NavLink to="/event">EVENTS</NavLink>
           </div>
           {/* Mobile only */}
@@ -46,7 +46,7 @@ function Navbar() {
         {/* CENTER — Logo always */}
         <Link to="/" className="nav-logo">
           Darsana <span>Events</span>
-          <small>LUXURY EVENT VENUE</small>
+          <small>LUXURY EVENT SPACES</small>
         </Link>
 
         {/* RIGHT — desktop nav / empty placeholder mobile */}

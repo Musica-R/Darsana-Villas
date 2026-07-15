@@ -22,6 +22,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Events from './pages/Events';
 import MobileArrow from './components/MobileArrow';
+import BottomNavbar from './components/BottomNavbar';
 
 function AppContent() {
 
@@ -55,6 +56,7 @@ function AppContent() {
 
       <Footer />
       <MobileArrow />
+      <BottomNavbar />
     </>
   );
 }

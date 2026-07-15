@@ -67,11 +67,11 @@
 
 .collage-header {
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .collage-header span {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.22em;
   color: #c9a84c;
   text-transform: uppercase;
@@ -179,7 +179,7 @@
 
 .collage-title {
   margin: 0;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   font-weight: 600;
   color: #f5ead8;
@@ -190,7 +190,7 @@
 
 .collage-sub {
   margin: 0;
-  font-size: 10.5px;
+  font-size: 14px;
   color: rgba(245, 234, 216, 0.72);
   letter-spacing: 0.02em;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -380,7 +380,7 @@
 }
 
 .stat-label {
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 3px;
   color: var(--gold-light);
   margin-top: 10px;
@@ -560,7 +560,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 5px;
   color: var(--gold, #c9a84c);
   margin-bottom: 20px;
@@ -609,7 +609,7 @@
 
 /* Body */
 .wow-body {
-  font-size: 15px;
+  font-size: 17px;
   color: rgba(245, 240, 232, 0.55);
   margin: 0 0 40px;
   line-height: 1.9;
@@ -966,12 +966,12 @@
   }
 
   .collage-title {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.14em;
   }
 
   .collage-sub {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .collage-icon-ring {
@@ -1035,7 +1035,7 @@
   }
 
   .stat-label {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 2px;
   }
 
@@ -1066,7 +1066,7 @@
 
   .wow-label {
     gap: 10px;
-    font-size: 7px;
+    font-size: 10px;
     letter-spacing: 3px;
     margin-bottom: 14px;
   }
@@ -1082,7 +1082,7 @@
   }
 
   .wow-body {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.8;
     margin-bottom: 28px;
   }

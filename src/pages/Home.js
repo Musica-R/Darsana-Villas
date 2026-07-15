@@ -12,7 +12,7 @@ import PhotoStrip from '../components/StripSection';
 
 const COLLAGE_ITEMS = [
   {
-    img: '/ass/2.jpeg',
+    img: '/ass/33.jpeg',
     alt: 'wedding reception',
     icon: <GiBigDiamondRing />,
     label: 'WEDDING RECEPTION',
@@ -116,7 +116,7 @@ function Home() {
 
       {/* HERO bg image */}
       <HeroSection
-        backgroundImage="/assets/back.webp"
+        backgroundImage="/ass/ev/D10.png"
         tagline="ELEGANCE • MEMORIES • CELEBRATIONS"
         description={"Extraordinary celebrations in\nbreathstopping settings"}
         primaryLabel="BEGIN YOUR JOURNEY"
@@ -314,10 +314,10 @@ function Home() {
 
           {/* Left: Image side */}
           <div className="wow-images sa-fade-left">
-            <img className="wow-img-bg" src="/assets/wow1.webp" alt="Table setting" />
+            <img className="wow-img-bg" src="/ass/ev/D1.webp" alt="Table setting" />
             <div className="wow-overlay" />
             <div className="wow-circle">
-              <img src="/assets/wow3.jpg" alt="Decor" />
+              <img src="/ass/29.jpg" alt="Decor" />
 
             </div>
             <div className="wow-floater wow-floater-1">

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Darsanahero.css";
 import { useNavigate } from "react-router-dom";
+import { Award, Sparkles, Crown } from "lucide-react";
 
 export default function DarsanaAboutHero({
     currentPage,
@@ -218,54 +219,12 @@ export default function DarsanaAboutHero({
                             {/* Stat 1 */}
                             <div className="dah-stat">
 
-                                <svg
-                                    width="22"
-                                    height="20"
-                                    viewBox="0 0 24 22"
-                                    fill="none"
+                                <Award
+                                    size={22}
+                                    color="#b8860b"
+                                    strokeWidth={1.6}
                                     aria-hidden="true"
-                                >
-                                    <path
-                                        d="M2 17 L4 8 L9 13 L12 4 L15 13 L20 8 L22 17 Z"
-                                        stroke="#b8860b"
-                                        strokeWidth="1.4"
-                                        strokeLinejoin="round"
-                                    />
-
-                                    <rect
-                                        x="2"
-                                        y="17"
-                                        width="20"
-                                        height="3"
-                                        rx="1.2"
-                                        stroke="#b8860b"
-                                        strokeWidth="1.1"
-                                    />
-
-                                    <circle
-                                        cx="2.5"
-                                        cy="8"
-                                        r="1.4"
-                                        fill="#b8860b"
-                                        opacity="0.85"
-                                    />
-
-                                    <circle
-                                        cx="12"
-                                        cy="4"
-                                        r="1.4"
-                                        fill="#b8860b"
-                                        opacity="0.85"
-                                    />
-
-                                    <circle
-                                        cx="21.5"
-                                        cy="8"
-                                        r="1.4"
-                                        fill="#b8860b"
-                                        opacity="0.85"
-                                    />
-                                </svg>
+                                />
 
                                 <span className="dah-num">40+</span>
 
@@ -282,46 +241,12 @@ export default function DarsanaAboutHero({
                             {/* Stat 2 */}
                             <div className="dah-stat">
 
-                                <svg
-                                    width="22"
-                                    height="20"
-                                    viewBox="0 0 24 22"
-                                    fill="none"
+                                <Sparkles
+                                    size={22}
+                                    color="#b8860b"
+                                    strokeWidth={1.6}
                                     aria-hidden="true"
-                                >
-                                    <polygon
-                                        points="12,2 22,8.5 12,21 2,8.5"
-                                        stroke="#b8860b"
-                                        strokeWidth="1.4"
-                                        strokeLinejoin="round"
-                                    />
-
-                                    <polyline
-                                        points="2,8.5 7.5,8.5 12,2 16.5,8.5 22,8.5"
-                                        stroke="#b8860b"
-                                        strokeWidth="0.9"
-                                        strokeLinejoin="round"
-                                    />
-
-                                    <line
-                                        x1="7.5"
-                                        y1="8.5"
-                                        x2="12"
-                                        y2="21"
-                                        stroke="#b8860b"
-                                        strokeWidth="0.75"
-                                    />
-
-                                    <line
-                                        x1="16.5"
-                                        y1="8.5"
-                                        x2="12"
-                                        y2="21"
-                                        stroke="#b8860b"
-                                        strokeWidth="0.75"
-                                    />
-
-                                </svg>
+                                />
 
                                 <span className="dah-num">500+</span>
 
@@ -338,40 +263,12 @@ export default function DarsanaAboutHero({
                             {/* Stat 3 */}
                             <div className="dah-stat">
 
-                                <svg
-                                    width="22"
-                                    height="20"
-                                    viewBox="0 0 24 22"
-                                    fill="none"
+                                <Crown
+                                    size={22}
+                                    color="#b8860b"
+                                    strokeWidth={1.6}
                                     aria-hidden="true"
-                                >
-                                    <rect
-                                        x="1"
-                                        y="10"
-                                        width="22"
-                                        height="11"
-                                        rx="1.2"
-                                        stroke="#b8860b"
-                                        strokeWidth="1.2"
-                                    />
-
-                                    <path
-                                        d="M5 10 V7 Q5 3 9 3 L12 1 L15 3 Q19 3 19 7 V10"
-                                        stroke="#b8860b"
-                                        strokeWidth="1.2"
-                                        strokeLinejoin="round"
-                                    />
-
-                                    <rect
-                                        x="10"
-                                        y="14"
-                                        width="4"
-                                        height="7"
-                                        rx="0.6"
-                                        stroke="#b8860b"
-                                        strokeWidth="1"
-                                    />
-                                </svg>
+                                />
 
                                 <span className="dah-num dah-num--xs">
                                     UNMATCHED
