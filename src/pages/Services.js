@@ -29,6 +29,7 @@ import {
   ParkingSquare,
   Sparkles,
   Home,
+  FileText,
 } from 'lucide-react';
 
 const eventServices = [
@@ -150,6 +151,19 @@ function Services() {
         showStats={true}
         image="/assets/roof.webp"
       />
+
+      {/* ===================== VIEW SERVICE PDF BUTTON ===================== */}
+      <div className="svc-pdf-bar sa-fade-up">
+        <a
+          href="/assets/coffee.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="svc-pdf-btn"
+        >
+          <FileText size={16} style={{ marginRight: 8, verticalAlign: '-3px' }} />
+          VIEW SERVICE PDF
+        </a>
+      </div>
 
       {/* ===================== EVERYTHING YOU NEED ===================== */}
       <section

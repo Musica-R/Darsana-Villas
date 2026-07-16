@@ -72,10 +72,10 @@ function BottomNavbar() {
       <div className={`bn__sheet ${moreOpen ? 'open' : ''}`} ref={sheetRef}>
         <div className="bn__sheet-handle" />
 
-        <button className="bn__sheet-item" onClick={() => goTo('/about')}>
+        {/* <button className="bn__sheet-item" onClick={() => goTo('/about')}>
           <Info strokeWidth={1.6} />
           <span>About</span>
-        </button>
+        </button> */}
 
         <button className="bn__sheet-item" onClick={() => goTo('/stay')}>
           <BedDouble strokeWidth={1.6} />

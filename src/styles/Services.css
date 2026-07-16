@@ -571,6 +571,32 @@
   color: #fff;
 }
 
+/* VIEW SERVICE PDF BUTTON (top bar) */
+.services-page .svc-pdf-bar {
+  text-align: center;
+  padding: 28px 20px;
+  background: var(--cream, #f8f4ea);
+}
+
+.services-page .svc-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+   display: inline-block;
+  background: var(--gold, #b8935a);
+  color: var(--white, #fff);
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 14px 36px;
+  border: 1px solid var(--gold, #b8935a);
+  border-radius: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .35s ease, color .35s ease, transform .3s ease;
+}
+
+
 
 /* ================================================================
    RESPONSIVE
@@ -634,6 +660,10 @@
   .svc-why-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .services-page .svc-pdf-bar {
+    padding: 20px 16px;
   }
 }
 

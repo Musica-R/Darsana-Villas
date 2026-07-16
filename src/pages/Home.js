@@ -169,7 +169,7 @@ function Home() {
         </div>
 
         <div className="intro-text-col">
-          <p className="section-label sa-fade-up">OUR STORY</p>
+          <p className="section-label sa-fade-up">ABOUT US</p>
 
           <h2 className="section-title">
             <span className="sa-word">Where Four Decades of&nbsp;</span>
@@ -185,17 +185,25 @@ function Home() {
             isn't just a venue — it is the culmination of 40 years of hospitality expertise, designed
             from the ground up to handle the grandest Indian weddings down to the finest logistical details.
           </p>
-          <p className="section-body sa-fade-up sa-d4" style={{ marginTop: '15px' }}>
+          {/* <p className="section-body sa-fade-up sa-d4" style={{ marginTop: '15px' }}>
             From lavish wedding receptions and intimate ceremonies to milestone celebrations and corporate
             gatherings, every event at Darsana Events is handled with the care and precision that only
             four generations of experience can bring.
+          </p> */}
+
+          <p className="section-body sa-fade-up sa-d4" style={{ marginTop: '15px' }}>
+            Our spaces — an open lawn, an intimate air-conditioned hall, two semi-covered halls,
+            and four 2BHK service apartments — are thoughtfully designed so that every guest, every
+            family member, and every moment is cared for under one roof. When you choose Darsana Events,
+            you're not just booking a venue. You're entrusting your celebration to people who have
+            dedicated their lives to making events extraordinary.
           </p>
           <Link
-            to="/about"
+            to="/services"
             className="btn-gold sa-fade-up sa-d5"
             style={{ marginTop: '34px', display: 'inline-block' }}
           >
-            DISCOVER OUR STORY
+           DISCOVER OUR SERVICES
           </Link>
         </div>
 
@@ -304,7 +312,7 @@ function Home() {
 
       {/* VIDEO SECTION */}
 
-     <PhotoStrip />
+      <PhotoStrip />
 
 
 

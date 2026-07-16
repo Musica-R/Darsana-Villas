@@ -31,12 +31,13 @@ function Navbar() {
           {/* Desktop only */}
           <div className="nav-links desktop-only">
             <NavLink to="/" end>HOME</NavLink>
-            <NavLink to="/about">ABOUT</NavLink>
+            {/* <NavLink to="/about">ABOUT</NavLink> */}
             <NavLink to="/venues">SPACES</NavLink>
             <NavLink to="/event">EVENTS</NavLink>
+            <NavLink to="/stay">STAY</NavLink>
           </div>
           {/* Mobile only */}
-          
+
           <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
             {menuOpen ? '✕' : '☰'}
           </button>
@@ -52,7 +53,6 @@ function Navbar() {
         {/* RIGHT — desktop nav / empty placeholder mobile */}
         <div className="navbar__right">
           <div className="nav-links desktop-only">
-            <NavLink to="/stay">STAY</NavLink>
             <NavLink to="/services">SERVICES</NavLink>
             <NavLink to="/gallery">GALLERY</NavLink>
             <NavLink to="/contact">CONTACT</NavLink>

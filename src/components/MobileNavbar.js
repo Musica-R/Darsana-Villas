@@ -7,7 +7,7 @@ function MobileNavbar({ menuOpen, setMenuOpen }) {
     <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
 
       <NavLink onClick={() => setMenuOpen(false)} to="/" end>HOME</NavLink>
-      <NavLink onClick={() => setMenuOpen(false)} to="/about">ABOUT</NavLink>
+      {/* <NavLink onClick={() => setMenuOpen(false)} to="/about">ABOUT</NavLink> */}
       <NavLink onClick={() => setMenuOpen(false)} to="/venues">VENUES</NavLink>
       <NavLink onClick={() => setMenuOpen(false)} to="/event">EVENTS</NavLink>
 
