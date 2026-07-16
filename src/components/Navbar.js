@@ -53,7 +53,7 @@ function Navbar() {
         {/* RIGHT — desktop nav / empty placeholder mobile */}
         <div className="navbar__right">
           <div className="nav-links desktop-only">
-            <NavLink to="/services">SERVICES</NavLink>
+            <NavLink to="/services">PACKAGES</NavLink>
             <NavLink to="/gallery">GALLERY</NavLink>
             <NavLink to="/contact">CONTACT</NavLink>
           </div>

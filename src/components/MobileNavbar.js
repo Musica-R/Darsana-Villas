@@ -12,7 +12,7 @@ function MobileNavbar({ menuOpen, setMenuOpen }) {
       <NavLink onClick={() => setMenuOpen(false)} to="/event">EVENTS</NavLink>
 
       <NavLink onClick={() => setMenuOpen(false)} to="/stay">STAY</NavLink>
-      <NavLink onClick={() => setMenuOpen(false)} to="/services">SERVICES</NavLink>
+      <NavLink onClick={() => setMenuOpen(false)} to="/services">PACKAGES</NavLink>
       <NavLink onClick={() => setMenuOpen(false)} to="/gallery">GALLERY</NavLink>
       <NavLink onClick={() => setMenuOpen(false)} to="/contact">CONTACT</NavLink>
 

@@ -203,7 +203,7 @@ function Home() {
             className="btn-gold sa-fade-up sa-d5"
             style={{ marginTop: '34px', display: 'inline-block' }}
           >
-           DISCOVER OUR SERVICES
+           DISCOVER OUR PACKAGES
           </Link>
         </div>
 
@@ -224,7 +224,7 @@ function Home() {
         </div>
         <div className="stat-item sa-fade-up sa-d3">
           <div className="stat-num"><AnimatedCounter target={4} delay={400} /></div>
-          <div className="stat-label">SERVICE APARTMENTS</div>
+          <div className="stat-label">2 BHK VILLAS</div>
         </div>
         <div className="stat-item sa-fade-up sa-d4">
           <div className="stat-num"><AnimatedCounter target={98} suffix="%" delay={600} /></div>

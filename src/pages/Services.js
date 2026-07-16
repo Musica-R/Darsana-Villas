@@ -153,7 +153,7 @@ async function downloadPdf(pdfUrl) {
 
     const blob = await response.blob();
 
-    saveAs(blob, "Darsana-Service-Brochure.pdf");
+    saveAs(blob, "Download-Package-Brochure.pdf");
   } catch (error) {
     console.error(error);
 
@@ -198,7 +198,7 @@ function DownloadConfirmPopup({ pdfUrl, onClose, onConfirm, isDownloading, error
           <FileText size={30} />
         </div>
 
-        <h3 className="pdf-confirm-title">Download Service Brochure</h3>
+        <h3 className="pdf-confirm-title">Download Package Brochure</h3>
         <p className="pdf-confirm-body">
           This will save the PDF to your device so you can view it anytime, even offline.
         </p>
@@ -265,7 +265,7 @@ function ViewServicePdfButton({ pdfUrl = '/assets/Coffee.pdf' }) {
     <>
       <button type="button" className="svc-pdf-btn" onClick={() => setIsOpen(true)}>
         <FileText size={16} style={{ marginRight: 8, verticalAlign: '-3px' }} />
-        VIEW SERVICE PDF
+        VIEW PACKAGES PDF
       </button>
 
       {isOpen && (
@@ -290,7 +290,7 @@ function Services() {
   return (
     <div className="services-page">
       <DarsanaAboutHero
-        currentPage="SERVICES"
+        currentPage="PACKAGES"
         label="WHAT WE OFFER"
         title={`Every Celebration Detail,<br /><em>Beautifully Perfected</em>`}
         body={`From full wedding planning to bespoke florals and fine dining, our in-house team handles every element of your celebration.`}

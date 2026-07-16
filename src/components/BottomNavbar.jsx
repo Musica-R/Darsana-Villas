@@ -111,7 +111,7 @@ function BottomNavbar() {
           onClick={() => setMoreOpen(false)}
         >
           <Gem strokeWidth={1.6} />
-          <span>Services</span>
+          <span>Packages</span>
         </NavLink>
 
        

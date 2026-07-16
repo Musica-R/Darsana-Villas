@@ -41,14 +41,14 @@ function Footer() {
               {/* <li><Link to="/about">About Us</Link></li> */}
               <li><Link to="/venues">Our Venues</Link></li>
               <li><Link to="/stay">Stay &amp; Amenities</Link></li>
-              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/services">Packages</Link></li>
               <li><Link to="/gallery">Gallery</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h4>SERVICES</h4>
+            <h4>EVENTS</h4>
             <ul>
               <li><a href="/event">WEDDING RECEPTION</a></li>
               <li><a href="/event">INTIMATE WEDDINGS</a></li>
