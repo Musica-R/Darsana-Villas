@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Services.css';
 import DarsanaAboutHero from '../components/Darsanahero';
@@ -30,7 +30,12 @@ import {
   Sparkles,
   Home,
   FileText,
+  Loader2,
+  X,
+  Download,
 } from 'lucide-react';
+import { saveAs } from "file-saver";
+
 
 const eventServices = [
   { icon: Flower2, label: 'Dream Décor & Floral Styling' },
@@ -66,7 +71,7 @@ const packages = [
   },
   {
     num: '02',
-    img: '/ass/ev/D21.png',
+    img: '/ass/ev/D21.webp',
     label: 'RECEPTION PACKAGE',
     desc: 'An evening full of celebration with fine venue, décor and dining to delight your guests.',
     price: '₹2,25,000',
@@ -135,6 +140,147 @@ function useScrollAnimate(selector, className = 'sa-in', options = {}) {
   }, [selector, className]);
 }
 
+/* ===================== SHARED PDF DOWNLOAD HELPER ===================== */
+async function downloadPdf(pdfUrl) {
+  try {
+    const response = await fetch(pdfUrl, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to download PDF");
+    }
+
+    const blob = await response.blob();
+
+    saveAs(blob, "Darsana-Service-Brochure.pdf");
+  } catch (error) {
+    console.error(error);
+
+    // Mobile / network fallback: let the browser try to open it directly.
+    window.open(pdfUrl, "_blank");
+  }
+}
+
+/* ===================== DOWNLOAD CONFIRM POPUP ===================== */
+function DownloadConfirmPopup({ pdfUrl, onClose, onConfirm, isDownloading, error }) {
+  // Lock background scroll while the popup is open (also matters on mobile).
+  useEffect(() => {
+    const original = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = original;
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [onClose]);
+
+  return (
+    <div className="pdf-modal-overlay" onClick={onClose}>
+      <div
+        className="pdf-confirm-content"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Download service PDF"
+      >
+        <button type="button" className="pdf-icon-btn pdf-confirm-close" onClick={onClose} aria-label="Close">
+          <X size={18} />
+        </button>
+
+        <div className="pdf-confirm-icon">
+          <FileText size={30} />
+        </div>
+
+        <h3 className="pdf-confirm-title">Download Service Brochure</h3>
+        <p className="pdf-confirm-body">
+          This will save the PDF to your device so you can view it anytime, even offline.
+        </p>
+
+        {error && <p className="pdf-modal-error-text">{error}</p>}
+
+        <div className="pdf-confirm-actions">
+          <button type="button" className="pdf-confirm-download" onClick={onConfirm} disabled={isDownloading}>
+            {isDownloading ? (
+              <>
+                <Loader2 size={16} className="svc-pdf-spin" style={{ marginRight: 8, verticalAlign: '-3px' }} />
+                DOWNLOADING...
+              </>
+            ) : (
+              <>
+                <Download size={16} style={{ marginRight: 8, verticalAlign: '-3px' }} />
+                DOWNLOAD PDF
+              </>
+            )}
+          </button>
+          <button type="button" className="pdf-confirm-cancel" onClick={onClose}>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ===================== VIEW SERVICE PDF BUTTON ===================== */
+function ViewServicePdfButton({ pdfUrl = '/assets/Coffee.pdf' }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleConfirmDownload = async () => {
+    setIsDownloading(true);
+    setError(null);
+    try {
+      // Quick existence check so we don't silently "download" an HTML
+      // error/rewrite page instead of the real PDF (same SPA-rewrite bug
+      // as before, just checked before triggering the download this time).
+      const res = await fetch(pdfUrl, { method: 'HEAD', cache: 'no-store' });
+      const contentType = (res.headers.get('content-type') || '').toLowerCase();
+      if (!res.ok || contentType.includes('html')) {
+        setError('Sorry, the PDF is temporarily unavailable. Please try again shortly.');
+        setIsDownloading(false);
+        return;
+      }
+
+      await downloadPdf(pdfUrl);
+
+      setIsDownloading(false);
+      setIsOpen(false);
+    } catch (err) {
+      // Network failure — fall back to letting the browser try directly.
+      await downloadPdf(pdfUrl);
+      setIsDownloading(false);
+      setIsOpen(false);
+    }
+  };
+
+  return (
+    <>
+      <button type="button" className="svc-pdf-btn" onClick={() => setIsOpen(true)}>
+        <FileText size={16} style={{ marginRight: 8, verticalAlign: '-3px' }} />
+        VIEW SERVICE PDF
+      </button>
+
+      {isOpen && (
+        <DownloadConfirmPopup
+          pdfUrl={pdfUrl}
+          onClose={() => setIsOpen(false)}
+          onConfirm={handleConfirmDownload}
+          isDownloading={isDownloading}
+          error={error}
+        />
+      )}
+    </>
+  );
+}
+
 function Services() {
   useEffect(() => { window.scrollTo({ top: 0 }); }, []);
 
@@ -154,15 +300,7 @@ function Services() {
 
       {/* ===================== VIEW SERVICE PDF BUTTON ===================== */}
       <div className="svc-pdf-bar sa-fade-up">
-        <a
-          href="/assets/coffee.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="svc-pdf-btn"
-        >
-          <FileText size={16} style={{ marginRight: 8, verticalAlign: '-3px' }} />
-          VIEW SERVICE PDF
-        </a>
+        <ViewServicePdfButton pdfUrl="/assets/Coffee.pdf" />
       </div>
 
       {/* ===================== EVERYTHING YOU NEED ===================== */}
@@ -170,7 +308,7 @@ function Services() {
         className="svc-everything"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(41,24,10,.55) 0%, rgba(58,34,15,.35) 45%, rgba(75,46,20,.55) 100%), url('/ass/ev/D9.png')",
+            "linear-gradient(180deg, rgba(41,24,10,.55) 0%, rgba(58,34,15,.35) 45%, rgba(75,46,20,.55) 100%), url('/ass/ev/D9.webp')",
         }}
       >
         <div className="svc-everything-inner">

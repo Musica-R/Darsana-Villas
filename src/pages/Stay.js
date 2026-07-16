@@ -22,8 +22,8 @@ function Stay() {
       <div className="stay-rooms-grid">
         {[
           {
-            img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
-            tag: 'SERVICE APARTMENT', name: '2BHK Apartment — I',
+            img: '/ass/ev/Villa5.png',
+            tag: 'Spacious Bedroom', name: '2 BHK Service Villas for Families',
             desc: 'A spacious and fully furnished 2-bedroom apartment with a comfortable living area, modern kitchen, and all essential amenities — ideal for families or wedding party guests seeking a home-like stay.',
             meta: (
               <div className="stay-room-meta-icons">
@@ -34,8 +34,8 @@ function Stay() {
             )
           },
           {
-            img: 'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80',
-            tag: 'SERVICE APARTMENT', name: '2BHK Apartment — II',
+            img: '/ass/ev/Villa4.png',
+            tag: 'Elegant Bedroom', name: '2 BHK Service Villas for Families',
             desc: 'A well-appointed 2-bedroom service apartment with a fully equipped kitchen, spacious living room, and private balcony — offering comfort and convenience throughout your celebration stay.',
             meta: (
               <div className="stay-room-meta-icons">
@@ -46,8 +46,8 @@ function Stay() {
             )
           },
           {
-            img: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80',
-            tag: 'SERVICE APARTMENT', name: '2BHK Apartment — III',
+            img: '/ass/ev/Villa2.png',
+            tag: 'Living Room', name: '2 BHK Service Villas for Families',
             desc: 'Thoughtfully designed for extended stays, this 2BHK apartment blends modern interiors with warm hospitality — complete with daily housekeeping, in-room dining, and all utilities included.',
             meta: (
               <div className="stay-room-meta-icons">
@@ -58,8 +58,8 @@ function Stay() {
             )
           },
           {
-            img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
-            tag: 'SERVICE APARTMENT', name: '2BHK Apartment — IV',
+            img: '/ass/ev/Villa 3.png',
+            tag: 'Kitchen', name: '2 BHK Service Villas for Families',
             desc: 'A premium 2-bedroom service apartment with elegant furnishings, a fully equipped kitchen, and a serene atmosphere — perfect for guests who want privacy and comfort close to the celebrations.',
             meta: (
               <div className="stay-room-meta-icons">
@@ -76,7 +76,7 @@ function Stay() {
             <div className="stay-room-info">
               <p className="stay-room-tag">{r.tag}</p>
               <h3 className="stay-room-name">{r.name}</h3>
-              <span className="stay-room-meta">{r.meta}</span>
+              {/* <span className="stay-room-meta">{r.meta}</span> */}
             </div>
           </div>
         ))}

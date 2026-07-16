@@ -302,9 +302,9 @@
   }
 
   .dah-breadcrumb {
-    left: 420px;
+    left: 340px;
     top: 205px;
-    font-size: 16px;
+    font-size: 12px;
     letter-spacing: 2.5px;
   }
 
@@ -316,6 +316,9 @@
   .dah-floral-bl {
     width: 90px;
     height: 90px;
+  }
+  .dah-lbl{
+    font-size: 13px;
   }
 }
 

@@ -596,7 +596,137 @@
   transition: background .35s ease, color .35s ease, transform .3s ease;
 }
 
+.svc-pdf-spin {
+  animation: svc-pdf-spin 0.8s linear infinite;
+}
+@keyframes svc-pdf-spin {
+  to { transform: rotate(360deg); }
+}
 
+
+/* ===================== PDF VIEWER MODAL ===================== */
+.pdf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(20, 12, 5, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.pdf-confirm-content {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 24px 24px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.pdf-confirm-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.pdf-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: #f4ede4;
+  color: #2a1c10;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.pdf-icon-btn:hover {
+  background: #e8ddcd;
+}
+
+.pdf-confirm-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f4ede4;
+  color: #8a5a2b;
+  margin: 0 auto 14px;
+}
+
+.pdf-confirm-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2a1c10;
+  margin: 0 0 8px;
+}
+
+.pdf-confirm-body {
+  font-size: 13.5px;
+  color: #6b5a48;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.pdf-modal-error-text {
+  font-size: 13px;
+  color: #b3261e;
+  margin: 0 0 14px;
+}
+
+.pdf-confirm-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pdf-confirm-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 20px;
+  background: white;
+}
+
+.pdf-confirm-download:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.pdf-confirm-cancel {
+  background: none;
+  border: none;
+  color: #8a7a68;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.pdf-confirm-cancel:hover {
+  color: #2a1c10;
+}
+
+.svc-pdf-spin {
+  animation: pdf-spin 1s linear infinite;
+}
+
+@keyframes pdf-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 /* ================================================================
    RESPONSIVE
@@ -691,5 +821,13 @@
 
   .svc-why-item {
     padding: 20px 18px;
+  }
+
+  .pdf-modal-content {
+    max-height: 96vh;
+    border-radius: 10px;
+  }
+  .pdf-modal-title {
+    font-size: 13px;
   }
 }

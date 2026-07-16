@@ -38,7 +38,7 @@ function Footer() {
             <h4>NAVIGATE</h4>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
+              {/* <li><Link to="/about">About Us</Link></li> */}
               <li><Link to="/venues">Our Venues</Link></li>
               <li><Link to="/stay">Stay &amp; Amenities</Link></li>
               <li><Link to="/services">Services</Link></li>

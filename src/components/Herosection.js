@@ -105,7 +105,7 @@ const HeroSection = ({
   headlineScript = "Dream Weddings",
   headlineLine3 = "Come Alive",
   description = "Host unforgettable weddings, receptions and celebrations\nin elegant venues crafted for timeless memories.",
-  primaryLabel = "EXPLORE VENUES",
+  primaryLabel = "EXPLORE SPACES",
   secondaryLabel = "BOOK YOUR EVENT",
   onPrimary,
   onSecondary,
