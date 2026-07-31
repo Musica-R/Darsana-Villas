@@ -39,7 +39,7 @@ function Footer() {
             <ul>
               <li><Link to="/">Home</Link></li>
               {/* <li><Link to="/about">About Us</Link></li> */}
-              <li><Link to="/venues">Our Venues</Link></li>
+              {/* <li><Link to="/venues">Our Venues</Link></li> */}
               <li><Link to="/stay">Stay &amp; Amenities</Link></li>
               <li><Link to="/services">Packages</Link></li>
               <li><Link to="/gallery">Gallery</Link></li>

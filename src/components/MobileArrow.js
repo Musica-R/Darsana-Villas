@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaArrowUp, FaWhatsapp } from "react-icons/fa";
+import { FaArrowUp, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 function MobileArrow() {
 
@@ -38,6 +38,8 @@ function MobileArrow() {
 
   };
 
+  const phoneNumber = "917736257634";
+
   // WHATSAPP DEFAULT MESSAGE
 
   const whatsappMessage = encodeURIComponent(
@@ -47,16 +49,29 @@ function MobileArrow() {
   return (
     <>
 
+      
+
       {/* WHATSAPP BUTTON */}
 
       <a
-        href={`https://api.whatsapp.com/send?phone=917736257634&text=${whatsappMessage}`}
+        href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         className={`whatsapp-btn ${showButtons ? "show" : ""}`}
         aria-label="WhatsApp"
       >
+        <span className="whatsapp-pulse"></span>
         <FaWhatsapp />
+      </a>
+
+      {/* CALL BUTTON */}
+
+      <a
+        href={`tel:+${phoneNumber}`}
+        className={`call-btn ${showButtons ? "show" : ""}`}
+        aria-label="Call Us"
+      >
+        <FaPhoneAlt />
       </a>
 
       {/* SCROLL TO TOP BUTTON */}

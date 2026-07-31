@@ -120,9 +120,9 @@ function Home() {
         tagline="ELEGANCE • MEMORIES • CELEBRATIONS"
         description={"Extraordinary celebrations in\nbreathstopping settings"}
         primaryLabel="BEGIN YOUR JOURNEY"
-        secondaryLabel="EXPLORE SPACES"
+        secondaryLabel="EXPLORE STAY"
         onPrimary={() => navigate('/contact')}
-        onSecondary={() => navigate('/venues')}
+        onSecondary={() => navigate('/stay')}
       />
 
       {/* COLLAGE STRIP */}

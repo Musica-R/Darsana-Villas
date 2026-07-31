@@ -117,7 +117,7 @@ function Events() {
         title={`Every Memorable <em>Occasion</em>`}
         body={`From intimate pre-wedding rituals to grand corporate galas — we craft each moment with elegance and intention.`}
         showStats={true}
-        image="/assets/ocean.webp"
+        image="/ass/bg1.png"
       />
 
       <section className="events-grid-section">

@@ -82,10 +82,10 @@ function BottomNavbar() {
           <span>Stay</span>
         </button>
 
-        <button className="bn__sheet-item" onClick={() => goTo('/venues')}>
+        {/* <button className="bn__sheet-item" onClick={() => goTo('/venues')}>
           <Building2 strokeWidth={1.6} />
           <span>Venues</span>
-        </button>
+        </button> */}
 
         <button className="bn__sheet-item" onClick={() => goTo('/event')}>
           <CalendarDays strokeWidth={1.6} />

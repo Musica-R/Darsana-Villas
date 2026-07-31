@@ -32,9 +32,9 @@ function Navbar() {
           <div className="nav-links desktop-only">
             <NavLink to="/" end>HOME</NavLink>
             {/* <NavLink to="/about">ABOUT</NavLink> */}
-            <NavLink to="/venues">SPACES</NavLink>
+            {/* <NavLink to="/venues">SPACES</NavLink> */}
             <NavLink to="/event">EVENTS</NavLink>
-            <NavLink to="/stay">STAY</NavLink>
+            <NavLink to="/services">PACKAGES</NavLink>
           </div>
           {/* Mobile only */}
 
@@ -53,7 +53,8 @@ function Navbar() {
         {/* RIGHT — desktop nav / empty placeholder mobile */}
         <div className="navbar__right">
           <div className="nav-links desktop-only">
-            <NavLink to="/services">PACKAGES</NavLink>
+            <NavLink to="/stay">STAY</NavLink>
+
             <NavLink to="/gallery">GALLERY</NavLink>
             <NavLink to="/contact">CONTACT</NavLink>
           </div>

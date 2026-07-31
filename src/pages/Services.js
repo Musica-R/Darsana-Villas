@@ -295,7 +295,7 @@ function Services() {
         title={`Every Celebration Detail,<br /><em>Beautifully Perfected</em>`}
         body={`From full wedding planning to bespoke florals and fine dining, our in-house team handles every element of your celebration.`}
         showStats={true}
-        image="/assets/roof.webp"
+        image="/ass/bg3.png"
       />
 
       {/* ===================== VIEW SERVICE PDF BUTTON ===================== */}
