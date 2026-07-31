@@ -9,6 +9,7 @@ import TestimonialSection from '../components/Testimonialsection';
 import { useEffect, useRef, useState } from "react";
 import PhotoStrip from '../components/StripSection';
 // import VideoSection from '../components/Videosection';
+import { FaPlay } from 'react-icons/fa';
 
 const COLLAGE_ITEMS = [
   {
@@ -39,6 +40,22 @@ const COLLAGE_ITEMS = [
     label: 'CORPORATE & SEMINARS',
     sub: 'Professional. Polished. Purposeful.',
   },
+];
+
+const REEL_ITEMS = [
+  { url: 'https://www.instagram.com/reel/DZ2iX8PN8tc/?utm_source=ig_web_copy_link', thumb: '/ass/i1.png', label: 'Wedding Highlights' },
+  { url: 'https://www.instagram.com/reel/DZg4zsqh4W_/?utm_source=ig_web_copy_link', thumb: '/ass/i2.png', label: 'Reception Moments' },
+  { url: 'https://www.instagram.com/reel/DYxMrXoPGLA/?utm_source=ig_web_copy_link', thumb: '/ass/i3.png', label: 'Decor & Details' },
+  { url: 'https://www.instagram.com/reel/DYorV-CxiVi/?utm_source=ig_web_copy_link', thumb: '/ass/i4.png', label: 'Celebration Vibes' },
+  { url: 'https://www.instagram.com/reel/DXuVFupDwi8/?utm_source=ig_web_copy_link', thumb: '/ass/i5.png', label: 'Guest Experience' },
+  { url: 'https://www.instagram.com/reel/DWbvAOjkjfp/?utm_source=ig_web_copy_link', thumb: '/ass/i6.png', label: 'Behind The Scenes' },
+  { url: 'https://www.instagram.com/reel/DV6FpVAEvwg/?utm_source=ig_web_copy_link', thumb: '/ass/i7.png', label: 'Venue Walkthrough' },
+
+  { url: 'https://www.instagram.com/reel/DVJkVSCE3xj/?utm_source=ig_web_copy_link', thumb: '/ass/i8.png', label: 'Wedding Highlights' },
+  { url: 'https://www.instagram.com/reel/DUqOMruEeni/?utm_source=ig_web_copy_link', thumb: '/ass/i9.png', label: 'Reception Moments' },
+  { url: 'https://www.instagram.com/reel/DUcvpGRkWM0/?utm_source=ig_web_copy_link', thumb: '/ass/i10.png', label: 'Decor & Details' },
+  { url: 'https://www.instagram.com/reel/DULN0GCEurM/?utm_source=ig_web_copy_link', thumb: '/ass/i11.png', label: 'Celebration Vibes' },
+  { url: 'https://www.instagram.com/reel/DT-aH0XEv0C/?utm_source=ig_web_copy_link', thumb: '/ass/i12.png', label: 'Guest Experience' },
 ];
 
 /* ── Animated Counter ── */
@@ -203,7 +220,7 @@ function Home() {
             className="btn-gold sa-fade-up sa-d5"
             style={{ marginTop: '34px', display: 'inline-block' }}
           >
-           DISCOVER OUR PACKAGES
+            DISCOVER OUR PACKAGES
           </Link>
         </div>
 
@@ -308,6 +325,37 @@ function Home() {
 
         <Link to="/gallery" className="btn-outline sa-fade-up sa-d6">VIEW FULL GALLERY</Link>
 
+      </section>
+
+      {/* VIDEO REELS SECTION */}
+      <section className="reels-section">
+        <p className="section-label sa-fade-up">SEE IT IN MOTION</p>
+
+        <h2 className="section-title">
+          <span className="sa-word">Our&nbsp;</span>
+          <em className="sa-word sa-d1">Reels</em>
+        </h2>
+
+        <div className="gold-divider sa-fade-up sa-d2"><span>✦</span></div>
+
+        <div className="reels-grid">
+          {REEL_ITEMS.map((reel, i) => (
+            <a
+              key={reel.url}
+              href={reel.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`reel-cell sa-fade-up sa-d${(i % 6) + 1}`}
+            >
+              <img src={reel.thumb} alt={reel.label} />
+              <div className="reel-overlay" />
+              <div className="reel-play-btn">
+                <FaPlay />
+              </div>
+              {/* <p className="reel-label">{reel.label}</p> */}
+            </a>
+          ))}
+        </div>
       </section>
 
       {/* VIDEO SECTION */}
