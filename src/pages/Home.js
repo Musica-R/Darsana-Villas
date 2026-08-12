@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import PhotoStrip from '../components/StripSection';
 // import VideoSection from '../components/Videosection';
 import { FaPlay } from 'react-icons/fa';
+import { FaMusic } from 'react-icons/fa';
 
 const COLLAGE_ITEMS = [
   {
@@ -34,12 +35,19 @@ const COLLAGE_ITEMS = [
     sub: 'Every milestone, beautifully marked',
   },
   {
-    img: '/assets/col3.jpg',
-    alt: 'corporate events',
-    icon: <MdCorporateFare />,
-    label: 'CORPORATE & SEMINARS',
-    sub: 'Professional. Polished. Purposeful.',
+    img: '/ass/hal.jpeg',
+    alt: 'sangeeth and haldi events',
+    icon: <FaMusic />,
+    label: 'SANGEETH & HALDI',
+    sub: 'Vibrant. Colorful. Unforgettable.',
   },
+  // {
+  //   img: '/assets/col3.jpg',
+  //   alt: 'corporate events',
+  //   icon: <MdCorporateFare />,
+  //   label: 'CORPORATE & SEMINARS',
+  //   sub: 'Professional. Polished. Purposeful.',
+  // },
 ];
 
 const REEL_ITEMS = [
@@ -174,7 +182,7 @@ function Home() {
 
         <div className="oval-wrap sa-fade-left">
           <div className="arch-main">
-            <img src="/ass/23.jpeg" alt="Garden Wedding" />
+            <img src="/ass/D28.png" alt="Garden Wedding" />
           </div>
           <div className="oval-float">
             <img src="/assets/col6.jpg" alt="Ceremony" />

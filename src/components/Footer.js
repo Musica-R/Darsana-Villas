@@ -50,10 +50,10 @@ function Footer() {
           <div className="footer-col">
             <h4>EVENTS</h4>
             <ul>
-              <li><a href="/event">WEDDING RECEPTION</a></li>
-              <li><a href="/event">INTIMATE WEDDINGS</a></li>
-              <li><a href="/event">CORPORATE EVENTS & SEMINARS</a></li>
-              <li><a href="/event">BIRTHDAYS & MILESTONES</a></li>
+              <li>WEDDING RECEPTION</li>
+              <li>INTIMATE WEDDINGS</li>
+              {/* <li><a href="/event">CORPORATE EVENTS & SEMINARS</a></li> */}
+              <li>BIRTHDAYS & MILESTONES</li>
             </ul>
           </div>
 

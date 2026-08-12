@@ -31,11 +31,17 @@ const services = [
         desc: "Whether it's a first birthday or a golden jubilee, we transform every family milestone into a celebration that will be cherished for generations.",
     },
     {
-        img: "/assets/cor.jpg",
-        icon: "corporate",
-        title: "CORPORATE & SEMINARS",
-        desc: "Impress clients, inspire teams, and host impactful seminars in our versatile, well-equipped venues — professional settings with seamless hospitality.",
+        img: "/ass/hal.jpeg",
+        icon: "music",
+        title: "SANGEETH & HALDI",
+        desc: "Celebrate every colorful moment with vibrant Sangeeth and Haldi ceremonies — beautifully arranged spaces, joyful ambience, and seamless hospitality for unforgettable celebrations.",
     },
+    // {
+    //     img: "/assets/cor.jpg",
+    //     icon: "corporate",
+    //     title: "CORPORATE & SEMINARS",
+    //     desc: "Impress clients, inspire teams, and host impactful seminars in our versatile, well-equipped venues — professional settings with seamless hospitality.",
+    // },
 ];
 
 const ServicesSection = () => {

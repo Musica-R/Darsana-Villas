@@ -33,7 +33,7 @@ function Navbar() {
             <NavLink to="/" end>HOME</NavLink>
             {/* <NavLink to="/about">ABOUT</NavLink> */}
             {/* <NavLink to="/venues">SPACES</NavLink> */}
-            <NavLink to="/event">EVENTS</NavLink>
+            {/* <NavLink to="/event">EVENTS</NavLink> */}
             <NavLink to="/services">PACKAGES</NavLink>
           </div>
           {/* Mobile only */}

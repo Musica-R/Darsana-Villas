@@ -1,30 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Gallery.css';
-import StripSection from '../components/StripSection';
 import PhotoStrip from '../components/StripSection';
 
 const galleryImages = [
-  { src: '/ass/34.jpg', cat: 'weddings', alt: 'Wedding Ceremony' },
-  { src: '/ass/22.png', cat: 'ceremonies', alt: 'Ceremony' },
-  { src: '/ass/28.jpg', cat: 'florals', alt: 'Flowers' },
-  { src: '/ass/2.jpeg', cat: 'dining', alt: 'Table setting' },
-  { src: '/ass/26.jpg', cat: 'weddings', alt: 'Couple' },
-  { src: '/ass/1a.png', cat: 'receptions', alt: 'Reception' },
-  { src: '/ass/33.jpg', cat: 'ceremonies', alt: 'Aisle' },
-  { src: '/ass/13.jpeg', cat: 'florals', alt: 'Bouquet' },
-  { src: '/ass/32.jpg', cat: 'venues', alt: 'Ballroom' },
-  { src: '/ass/27.jpg', cat: 'venues', alt: 'Garden' },
-  { src: '/ass/8.jpeg', cat: 'dining', alt: 'Dining' },
-  { src: '/ass/24.jpg', cat: 'receptions', alt: 'Reception hall' },
+  { src: '/ass/D26.png', alt: 'Wedding Ceremony' },
+  { src: '/ass/D22.png', alt: 'Ceremony' },
+  { src: '/ass/28.jpg', alt: 'Flowers' },
+  { src: '/ass/2.jpeg', alt: 'Table setting' },
+  { src: '/ass/26.jpg', alt: 'Couple' },
+  { src: '/ass/D23.png', alt: 'Reception' },
+  { src: '/ass/D27.png', alt: 'Aisle' },
+  { src: '/ass/32.jpg', alt: 'Ballroom' },
+  { src: '/ass/27.jpg', alt: 'Garden' },
+  { src: '/ass/8.jpeg', alt: 'Dining' },
+  { src: '/ass/24.jpg', alt: 'Reception hall' },
 ];
 
-const filters = ['all', 'weddings', 'ceremonies', 'receptions', 'florals', 'dining', 'venues'];
-
 function Gallery() {
-  const [active, setActive] = useState('all');
   useEffect(() => { window.scrollTo({ top: 0 }); }, []);
-
-  const visible = active === 'all' ? galleryImages : galleryImages.filter(g => g.cat === active);
 
   return (
     <div className="gallery-page">
@@ -37,11 +30,10 @@ function Gallery() {
       </section>
 
       {/* Curved Film Strip */}
-      {/* <StripSection /> */}
       <PhotoStrip />
 
       {/* Videos */}
-      <section className="gallery-videos">
+      {/* <section className="gallery-videos">
         <p className="section-label">IN MOTION</p>
         <h2 className="gallery-videos__heading">Relive the <em>Day</em></h2>
         <p className="gallery-videos__sub">
@@ -73,24 +65,17 @@ function Gallery() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* Filters */}
-      <div className="gallery-filter">
-        {filters.map(f => (
-          <button
-            key={f}
-            className={`filter-btn${active === f ? ' active' : ''}`}
-            onClick={() => setActive(f)}
-          >
-            {f.toUpperCase()}
-          </button>
-        ))}
-      </div>
+      {/* Gallery Title */}
+      <section className="gallery-title-section">
+        <p className="section-label">THE COLLECTION</p>
+        <h2 className="section-title">Every <em>Frame</em>, A Memory</h2>
+      </section>
 
       {/* Masonry */}
       <div className="gallery-masonry">
-        {visible.map((img, i) => (
+        {galleryImages.map((img, i) => (
           <div className="gallery-item" key={i}>
             <img src={img.src} alt={img.alt} />
           </div>

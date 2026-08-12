@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import '../styles/Strip.css';
 
 const CARDS = [
-  { src: '/ass/33.jpeg', label: 'Ceremony'    },
-  { src: '/ass/25.jpeg', label: 'Reception'   },
+  { src: '/ass/D3.png', label: 'Ceremony'    },
+  { src: '/ass/D25.png', label: 'Reception'   },
   { src: '/ass/37.jpeg', label: 'Details'     },
   { src: '/ass/31.jpeg', label: 'Portraits'   },
   { src: '/ass/29.jpg', label: 'Couple'      },
@@ -11,7 +11,7 @@ const CARDS = [
   { src: '/ass/29.jpeg', label: 'Candid'      },
   { src: '/ass/20.jpeg', label: 'Dancing'     },
   { src: '/ass/27.jpeg', label: 'Florals'     },
-  { src: '/ass/32.jpeg', label: 'Venue'       },
+  { src: '/ass/D28.png', label: 'Venue'       },
   { src: '/ass/28.jpeg', label: 'Toasts'      },
   { src: '/ass/36.jpg', label: 'Family'      },
 ];
