@@ -9,6 +9,7 @@ const ICONS = {
     intimate_wedding: <GiFlowerPot />,
     milestones: <GiPartyPopper />,
     corporate: <MdCorporateFare />,
+    music: <GiFlowerPot />,
 };
 
 const services = [
