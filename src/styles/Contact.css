@@ -1,0 +1,386 @@
+.contact-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+
+.contact-info h3 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.contact-info h3 em {
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+.c-detail {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--gold-pale);
+}
+
+.c-detail:last-child {
+  border-bottom: none;
+}
+
+.c-detail strong {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 7px;
+}
+
+.c-detail p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.contact-form {
+  background: white;
+  padding: 60px;
+  box-shadow: 0 4px 40px rgba(123, 79, 46, .08);
+}
+
+.contact-form h3 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 38px;
+}
+
+.contact-form h3 em {
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+.form-success {
+  background: var(--gold-pale);
+  color: var(--gold-dark);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: 1.5px;
+  color: var(--text-mid);
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--gold-pale);
+  background: var(--cream);
+  font-size: 15px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color .3s;
+  font-weight: 300;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* ================================================================
+   INLINE FIELD ERROR MESSAGES
+   ================================================================ */
+.field-error {
+  display: block;
+  color: #b3261e;
+  font-size: 12.5px;
+  letter-spacing: .3px;
+  margin-top: 6px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+
+/* ================================================================
+   MAP SECTION
+   ================================================================ */
+.map-section {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  padding: 0 60px;
+}
+
+.map-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.map-title {
+  font-size: 38px;
+  font-weight: 300;
+  margin: 6px 0 0;
+  line-height: 1.1;
+}
+
+.map-title em {
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+.map-header .section-label {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+}
+
+.map-header > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-directions {
+  display: inline-block;
+  padding: 13px 28px;
+  border: 1px solid var(--gold-dark);
+  color: var(--gold-dark);
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  transition: background .25s, color .25s;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.btn-directions:hover {
+  background: var(--gold-dark);
+  color: white;
+}
+
+.map-embed {
+  width: 100%;
+  height: 460px;
+  border: 1px solid var(--gold-pale);
+  overflow: hidden;
+  box-shadow: 0 4px 40px rgba(123, 79, 46, .08);
+}
+
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* ================================================================
+   RESPONSIVE — 1024px
+   ================================================================ */
+@media (max-width: 1024px) {
+
+  .contact-section {
+    padding: 0 40px;
+    gap: 55px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 32px;
+  }
+
+  .contact-form {
+    padding: 50px 40px;
+  }
+
+  .map-section {
+    padding: 0 40px;
+    margin-bottom: 80px;
+  }
+
+  .map-title {
+    font-size: 32px;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 768px TABLET
+   ================================================================ */
+@media (max-width: 768px) {
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin: 70px auto;
+    padding: 0 24px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 30px;
+    margin-bottom: 28px;
+  }
+
+  .contact-form {
+    padding: 42px 32px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .c-detail {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+
+  .map-section {
+    padding: 0 24px;
+    margin-bottom: 70px;
+  }
+
+  .map-title {
+    font-size: 28px;
+  }
+
+  .map-embed {
+    height: 380px;
+  }
+
+  .map-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-directions {
+    align-self: flex-start;
+  }
+}
+
+
+/* ================================================================
+   RESPONSIVE — 420px MOBILE
+   ================================================================ */
+@media (max-width: 420px) {
+
+  .contact-section {
+    margin: 55px auto;
+    padding: 0 18px;
+    gap: 38px;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+    box-shadow: 0 3px 24px rgba(123, 79, 46, .06);
+  }
+
+  .form-success {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    padding: 14px 12px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .c-detail {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .c-detail strong {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    margin-bottom: 6px;
+  }
+
+  .c-detail p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 13px 14px;
+    font-size: 14px;
+  }
+
+  .form-group textarea {
+    height: 110px;
+  }
+
+  .map-section {
+    padding: 0 18px;
+    margin-bottom: 55px;
+  }
+
+  .map-title {
+    font-size: 24px;
+  }
+
+  .map-embed {
+    height: 280px;
+  }
+
+  .btn-directions {
+    font-size: 11px;
+    padding: 11px 20px;
+  }
+
+  .field-error {
+    font-size: 11.5px;
+    margin-top: 5px;
+  }
+}

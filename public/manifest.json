@@ -1,0 +1,27 @@
+{
+  "short_name": "Darsana Events",
+  "name": "Darsana Events | Luxury Wedding & Event Venue",
+  "icons": [
+    {
+      "src": "1a.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "1a.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "1a.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#111111",
+  "background_color": "#ffffff",
+  "description": "Darsana Events is a luxury event space for weddings, receptions, birthdays, Sangeeth, Haldi and special celebrations."
+}
